@@ -85,9 +85,24 @@ function sendGroupeToDB($bdd, $group, $personnes){
 		$tmp .= ",'".strval($personnes[$i-1])."'";
 	}
 	$query_name = "INSERT INTO groupes (NOM_G".$nbPers.") VALUES ('" . $group."'" .$tmp.")";
+	$reponse = $bdd->query($query_name);
+}
+
+//A debugger
+function updateGroupe($bdd, $group, $new_name, $personnes){		
+	$set = "NOM_G = '" . $new_name . "'";
+	for($i=1; $i<=10; $i++){
+		$set .= ",P".strval($i);
+		if(i<=sizeof($personnes))
+			$tmp .= ",'".strval($personnes[$i-1])."'";
+		else
+			$tmp .= ",'NULL'";
+	}
+	$query_name = "UPDATE groupes  SET $set WHERE NOM_G = '" . $group . "'";
 	echo $query_name;
 	$reponse = $bdd->query($query_name);
 }
+
 function getListeEleves($bdd){
 	$reponse = $bdd->query("SELECT PRENOM, NOM FROM liste_bde WHERE 1");
 	return $reponse->fetchAll();
