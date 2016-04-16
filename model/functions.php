@@ -88,10 +88,8 @@ function sendGroupeToDB($bdd, $group, $personnes){
 	echo $query_name;
 	$reponse = $bdd->query($query_name);
 }
-function printEleves($bdd){
-	$reponse = $bdd->query("SELECT * FROM liste_bde WHERE 1");
-	while($donnees = $reponse->fetch()){
-		echo $donnees['PRENOM']. " ". $donnees['NOM']."<br>";
-	}
+function getListeEleves($bdd){
+	$reponse = $bdd->query("SELECT PRENOM, NOM FROM liste_bde WHERE 1");
+	return $reponse->fetchAll();
 }
 ?>

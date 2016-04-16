@@ -36,7 +36,10 @@
 	      Infos sur le groupe:
 	      <button type="button" class="close" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </button>
 	    </div>
-	    <div class="panel-body"></div>
+	    <?php //AFFICHER LES MEMBRES D'UN GROUPE    
+    	for($i=0; $i<sizeof($noms_array) && $i<sizeof($prenoms_array); $i++){ ?>
+	    	<div class="panel-body"> <?php echo $prenoms_array[$i] . " ". $noms_array[$i];?></div>
+	    	<?php } ?>
 	  </div>
 	</div>
       </div>
@@ -77,7 +80,11 @@
 	      <div class="col-md-4">
 		<div class="panel panel-default">
 		  <div class="panel-heading">Elèves:</div>
-		  <div class="panel-body">Martin Chochod</div>
+		  <?php foreach($liste_eleves as $eleve){ ?>
+		  <div class="panel-body">
+		  	<?php echo $eleve['PRENOM'] . " " . $eleve['NOM']; ?>
+		  </div>
+		  <?php } ?>
 		</div>
 	      </div>
 

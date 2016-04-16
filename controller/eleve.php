@@ -6,6 +6,9 @@ include '../model/functions.php';
 /*
 $voyages = array(array("WEI"),array("WEE"));
 $groupes_array = array("Busboys", "Tivi+", "Bresil");
+$prenoms_array = array("Benjamin", "Bernardo", "Augustin", "Martin");
+$noms_array = array("Auclair", "Cordeiro", "Morel", "Chochod");
+$liste_eleves = array(array('PRENOM'=> "Augustin", 'NOM'=>"MOREL"), array('PRENOM'=> "Godefroy", 'NOM'=>"Galas"));
 */
 //FIN SECTION A DECOMMENTER
 
@@ -23,16 +26,18 @@ $nom_getted = "Chochod";
 $prenom_getted = "Martin";
 $id = getID($bdd, $nom_getted, $prenom_getted);
 	
-// RECUPERER LES VOYAGES DISPONIBLES 
+// Récupérer les voyages disponibles à la réservation
 $voyages = getVoyagesDispo($bdd, $id); //**** On veut vérifier que la personne est inscrite à ce voyage
 
-//RECUPERER LES GROUPES AUXQUELS APPARTIENT LA PERSONNE
+
 //Tableau des groupes de la personne
 $groupes_array = getGroups($bdd, $id);
+
 //Récupérer tous les membres du groupe
 list($noms_array,$prenoms_array) = getPersonnesGroupe($bdd, "BusBoys");
 
-
+// Récupérer la liste BDE
+$liste_eleves = getListeEleves($bdd);
 
 // ****** PARTIE A CONSERVER TOUJOURS
 include '../view/eleve.php';
