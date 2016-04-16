@@ -54,9 +54,9 @@ function getGroups($bdd, $id){
 
 function getVoyagesDispo($bdd, $id){
 	//***** Il faudrait ajouter la possibilité de vérifier qu'on est bien inscrits aux voyages affichés ******
-	$query_name = "SELECT * FROM voyages_dispo WHERE voyages_dispo.DISPO = 1";
+	$query_name = "SELECT NOM_V FROM voyages_dispo WHERE voyages_dispo.DISPO = 1";
 	$reponse = $bdd->query($query_name);
-	return $reponse;
+	return $reponse->fetchAll();
 }
 
 // Retourner tous les membres d'un groupe avec 2 tableaux, un des noms, et un des prenoms
