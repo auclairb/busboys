@@ -44,13 +44,63 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						Infos sur le groupe:
-						
 					</div>
-	    <?php //AFFICHER LES MEMBRES D'UN GROUPE    
-	    for($i=0; $i<sizeof($noms_array) && $i<sizeof($prenoms_array); $i++){ ?>
-	    <div class="panel-body"> <?php echo $prenoms_array[$i] . " ". $noms_array[$i];?></div>
-	    <?php } ?>
+					<div class="panel panel-body">
+						<div class="row">
+							<div class="col-md-4">
+								<div class ="panel panel-default">
+									<div class ="panel-heading">
+										Participants du groupe
+									</div>
+									<div class = "panel-content">
+				    <?php //AFFICHER LES MEMBRES D'UN GROUPE    
+				    for($i=0; $i<sizeof($noms_array) && $i<sizeof($prenoms_array); $i++){ 
+				    	echo $prenoms_array[$i] . " ". $noms_array[$i]. "<br>";
+				    } ?>
+				    </div>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">Options:</div>
+					<div class="panel-body" style="margin:5px">
+
+						<div class="row">Répartition:</div>
+
+						<div class="row">
+							<div class="checkbox">
+								<label>
+									<input type="checkbox"> Ligne</label>
+								</div>
+								<div class="checkbox">
+									<label><input type="checkbox"> Bloc</label>
+								</div>
+							</div>
+
+							<div class="row">Placement dans le bus:</div>
+
+							<div class="row">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox"> A l'avant</label>
+									</div>
+									<div class="checkbox">
+										<label><input type="checkbox"> Au milieu</label>
+									</div>
+									<div class="checkbox">
+										<label><input type="checkbox"> A l'arrière</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
 	</div>
+</div>
 </div>
 </div>
 
@@ -85,6 +135,8 @@
 					</div><!-- /.col-lg-6 -->
 				</div>
 
+				</br>
+
 				<div class="row">
 
 					<div class="col-md-4">
@@ -102,45 +154,6 @@
 						<div class="panel panel-default">
 							<div class="panel-heading">Participants:</div>
 							<div class="panel-body">Augustin MOREL</div>
-						</div>
-					</div>
-
-					<div class="col-md-4">
-						<div class="panel panel-default">
-							<div class="panel-heading">Options:</div>
-							<div class="panel-body">
-
-								<div class="row">Répartition:</div>
-
-								<div class="row">
-									<div class="checkbox">
-										<label>
-											<input type="checkbox"> Ligne</label>
-										</div>
-										<div class="checkbox">
-											<label><input type="checkbox"> Bloc</label>
-										</div>
-									</div>
-
-									<div class="row">Placement dans le bus:</div>
-
-									<div class="row">
-										<div class="checkbox">
-											<label>
-												<input type="checkbox"> A l'avant</label>
-											</div>
-											<div class="checkbox">
-												<label><input type="checkbox"> Au milieu</label>
-											</div>
-											<div class="checkbox">
-												<label><input type="checkbox"> A l'arrière</label>
-											</div>
-										</div>
-
-									</div>
-
-								</div>
-							</div>
 						</div>
 					</div>
 
