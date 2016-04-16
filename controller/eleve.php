@@ -1,10 +1,10 @@
 <?php
-include '../model/functions.php';
+include '../model/eleve.php';
 
 // ******* IMPORTANT : décommenter cette section et commenter tout le reste jusque l'avant -dernière ligne pour vous ***********
 //DEBUT SECTION A DECOMMENTER
 /*
-$voyages = array(array("WEI"),array("WEE"));
+$voyages = array(array("WEI (aller)"),array("WEI (retour)"), array("WEE"));
 $groupes_array = array("Busboys", "Tivi+", "Bresil");
 $prenoms_array = array("Benjamin", "Bernardo", "Augustin", "Martin");
 $noms_array = array("Auclair", "Cordeiro", "Morel", "Chochod");
