@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>BUS Planner-Session élève</title>
+	<title>BUS Planner-Session BDE</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -9,7 +9,7 @@
 </head>
 <body>
 
-	<div class="row"> <div class="col-md-12"> <h1>BUS Planner-Session élève</h1></div></div>
+	<div class="row"> <div class="col-md-12"> <h1>BUS Planner-Session BDE</h1></div></div>
 	<div class="row">
 		<div class="col-md-12">
 			<div class="col-md-3">
