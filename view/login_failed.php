@@ -69,29 +69,42 @@
       </div>
 
 
-      <!-- Echec de la connexion -->
+
+      <!-- Page de connexion -->
       <div class="page-header">
-        <h1>Echec de la connexion</h1>
+        <h1>Connexion</h1>
       </div>
 
       <div class="col-sm-6">
+              <p>
               <div class="alert alert-danger" role="alert">
                 <strong>Erreur de connexion ! </strong> Veuillez prendre contact avec le BDE si vos identifiants ne fonctionnent pas.
               </div>
+              </p>
+
+                  <p>
+                  <label for="inputEmail" class="sr-only">Adresse mail</label>
+                  <input type="email" id="inputEmail" class="form-control" placeholder="Adresse mail" required autofocus>
+                  <label for="inputPassword" class="sr-only">Mot de passe</label>
+                  <input type="password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
+                  </p>
+
+                  <p>
+                  <button class="btn btn-lg btn-primary btn-block" type="submit">CONNEXION</button>
+                  </p>
       </div>
 
        <div class="col-sm-6">
+                  <p>
+                  <div class="alert alert-info" role="alert">
+                     <strong>Vous êtes </strong> membre du BDE ? Accédez au portail BDE !
+                  </div>
+                  </p>
 
-                    <p>
-                    <label for="inputEmail" class="sr-only">Adresse mail</label>
-                    <input type="email" id="inputEmail" class="form-control" placeholder="Adresse mail" required autofocus>
-                    <label for="inputPassword" class="sr-only">Mot de passe</label>
-                    <input type="password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
-                    </p>
-
-                    <p>
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">CONNEXION</button>
-                    </p>
+                  <p>
+                  <button class="btn btn-lg btn-success btn-block" type="submit">PORTAIL BDE</button>
+                  </p>
         </div>
+
 
 

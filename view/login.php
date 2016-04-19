@@ -76,12 +76,11 @@
       </div>
 
       <div class="col-sm-6">
+              <p>
               <div class="alert alert-info" role="alert">
-                <strong>Vous pouvez </strong> vous connecter avec les identifiants  <strong>reçus par mail.</strong>
+                <strong>Vous pouvez </strong> vous connecter avec les identifiants <strong>reçus par mail.</strong>
               </div>
-      </div>
-
-       <div class="col-sm-6">
+              </p>
 
                   <p>
                   <label for="inputEmail" class="sr-only">Adresse mail</label>
@@ -93,4 +92,19 @@
                   <p>
                   <button class="btn btn-lg btn-primary btn-block" type="submit">CONNEXION</button>
                   </p>
+      </div>
+
+       <div class="col-sm-6">
+                  <p>
+                  <div class="alert alert-info" role="alert">
+                     <strong>Vous êtes </strong> membre du BDE ? Accédez au portail BDE !
+                  </div>
+                  </p>
+
+                  <p>
+                  <button class="btn btn-lg btn-success btn-block" type="submit">PORTAIL BDE</button>
+                  </p>
         </div>
+
+
+
