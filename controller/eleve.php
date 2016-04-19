@@ -29,8 +29,7 @@ $liste_eleves = array(array('PRENOM'=> "Augustin", 'NOM'=>"MOREL"), array('PRENO
 
 // ********** DEBUT SECTION A COMMENTER ********************************
 //Connexion à la BDD
-$bdd = connectToDB();    
-
+$bdd = connectToDB();
  //Instanciation de variables qu'on s'arrangera pour récupérer en POST ou GET 
 $id = $_SESSION['ID'];
 $nom_getted = $_SESSION['NOM'];

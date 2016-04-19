@@ -41,9 +41,9 @@ function getGroups($bdd, $id){
 	$groups = array();
 	$cond = "";
 	for($i=1; $i<10;$i++){
-		$cond .= "P" .strval($i). " = " .$id. " OR ";
+		$cond .= "P" .strval($i). " = " .$id[0]. " OR ";
 	}
-	$cond .= "P10 = " .$id;
+	$cond .= "P10 = " .$id[0];
 	$query_name = "SELECT * FROM groupes WHERE " . $cond;
 	$reponse = $bdd->query($query_name);
 	while($donnees = $reponse->fetch()){
