@@ -28,7 +28,7 @@ $voyage = "WEI";
 
 // NE PAS COMMENTER :)
 if(!$resultat){
-	header('Location:login_failed.php'); 
+	header('Location:login.php?login_failure=true'); 
 }
 else{
 	echo "Succès vous êtes connectés !</br></br>";

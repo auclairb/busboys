@@ -1,5 +1,9 @@
 <?php
 session_start();
+	print_r($_POST);
+
+if(ISSET($_POST['NOM_V']))
+	echo "WOUHOUOOU";
 include '../model/eleve.php';
 
 // ******* IMPORTANT : décommenter cette section et commenter tout le reste jusque l'avant -dernière ligne pour vous ***********
