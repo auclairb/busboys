@@ -41,5 +41,5 @@ list($noms_array,$prenoms_array) = getPersonnesGroupe($bdd, "BusBoys");
 $liste_eleves = getListeEleves($bdd);
 
 // ****** PARTIE A CONSERVER TOUJOURS
-include '../view/eleve.php';
+include '../view/eleve_dyn.php';
 ?>
