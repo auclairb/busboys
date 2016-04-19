@@ -18,7 +18,7 @@
 		<div class="row">
 			<div class="col-md-12" style="text-align:center">
 				<h2>
-					Voyage <strong>aller</strong> de <?php echo $prenom_getted . " " . $nom_getted; ?>
+					Voyage <strong> <?php echo $voyage; ?> aller</strong> de <?php echo $prenom_getted . " " . $nom_getted; ?>
 				</h2>
 			</div>
 		</div>
@@ -28,30 +28,32 @@
 				<div class="col-md-3 col-md-offset-2"> 
 					<div class="panel panel-success">
 						<div class="panel-heading">
-							Mes groupes:
+							Mes groupes
 							<button type="button" class="close" data-toggle="modal" data-target="#myModal">
 							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 							</button>
 						</div>
-						<div class="panel-body">
-							<div class="list-group">
-							<?php 
-							$button_group_id = 0;
-							foreach ($groupes_array as $groupe){?>
-								<button type="button" class="list-group-item list-group-item-success" onclick= <?php echo stripslashes("\"javascript:allerShowGroupMembers(" . strval($button_group_id) . ");\"");?> id= <?php echo "'allerButtonGroup". strval($button_group_id) . "'";?> >
-								<?php echo $groupe; 
-								$button_group_id +=1;
-								?>
-								</button>
-							<?php } ?>
-							</div>
+						<div class = "panel-body" style="background-color: #f0f0f5">
+							Choisis le groupe d'amis avec lesquels tu veux faire l'<strong>aller :</strong>
+						</div>
+
+						<div class="list-group">
+						<?php 
+						$button_group_id = 0;
+						foreach ($groupes_array as $groupe){?>
+							<button type="button" class="list-group-item " onclick= <?php echo stripslashes("\"javascript:allerShowGroupMembers(" . strval($button_group_id) . ");\"");?> id= <?php echo "'allerButtonGroup". strval($button_group_id) . "'";?> >
+							<?php echo $groupe; 
+							$button_group_id +=1;
+							?>
+							</button>
+						<?php } ?>
 						</div>
 						<div class="panel-footer">
 							<div style = "text-align:right">
 								<button type="button" class="btn btn-primary" >Modifier</button>
 								&nbsp;
 
-								<button type="button" class="btn btn-danger" onclick="javascript:allerSupprimerGroupe(allerClickedGroup)">Supprimer</button>
+								<button type="button" class="btn btn-danger" onclick="javascript:supprimerGroupe(allerClickedGroup)">Supprimer</button>
 							</div>
 						</div>
 					</div>
@@ -62,28 +64,29 @@
 						<div class ="panel-heading">
 							Participants du groupe
 						</div>
-						<div class = "panel-body">
-							<?php 
-							$groupId = 0;
-							foreach($all_groupes_personnes as $groupe_selected){
-								$noms_array = $groupe_selected[0];
-								$prenoms_array = $groupe_selected[1];
-							?> 	
-							<ul class="list-group" style="display:none" <?php echo "id='group".strval($groupId)."'"?> >
-							    <?php //AFFICHER LES MEMBRES D'UN GROUPE
-							    echo "group " . strval($groupId) . "</br>";
-							    for($i=0; $i<sizeof($noms_array) && $i<sizeof($prenoms_array); $i++){ ?>
-							    <li class="list-group-item">
-							    	<?php echo $prenoms_array[$i] . " ". $noms_array[$i]. "<br>"; ?>
-							    </li>
-							    <?php     
-							    } 
-							$groupId +=1;
-							?>
+						<div class = "panel-body" style="background-color: #f0f0f5">
+							Les personnes avec qui tu seras pour le bus :
+						</div>
 
-						    </ul>
-						    <?php } ?>
-						 </div>
+						<?php 
+						$groupId = 0;
+						foreach($all_groupes_personnes as $groupe_selected){
+							$noms_array = $groupe_selected[0];
+							$prenoms_array = $groupe_selected[1];
+						?> 	
+						<ul class="list-group" style="display:none" <?php echo "id='allerGroup".strval($groupId)."'"?> >
+						    <?php //AFFICHER LES MEMBRES D'UN GROUPE
+						    for($i=0; $i<sizeof($noms_array) && $i<sizeof($prenoms_array); $i++){ ?>
+						    <li class="list-group-item">
+						    	<?php echo $prenoms_array[$i] . " ". $noms_array[$i]. "<br>"; ?>
+						    </li>
+						    <?php     
+						    } 
+						$groupId +=1;
+						?>
+
+					    </ul>
+					    <?php } ?>
 					</div>
 				</div>
 
@@ -166,25 +169,28 @@
 							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 							</button>
 						</div>
-						<div class="panel-body">
-							<div class="list-group">
-							<?php 
-							$button_group_id = 0;
-							foreach ($groupes_array as $groupe){?>
-								<button type="button" class="list-group-item list-group-item-info" onclick= <?php echo stripslashes("\"javascript:retourShowGroupMembers(" . strval($button_group_id) . ");\"");?> >
-								<?php echo $groupe; 
-								$button_group_id +=1;
-								?>
-								</button>
-							<?php } ?>
-							</div>
+						<div class = "panel-body" style="background-color: #f0f0f5">
+							Choisis le groupe d'amis avec lesquels tu veux faire le <strong>retour :</strong>
+						</div>
+
+						<div class="list-group">
+						<?php 
+						$button_group_id = 0;
+						foreach ($groupes_array as $groupe){?>
+							<button type="button" class="list-group-item" onclick= <?php echo stripslashes("\"javascript:retourShowGroupMembers(" . strval($button_group_id) . ");\"");?> id= <?php echo "'retourButtonGroup". strval($button_group_id) . "'";?> >
+							<?php echo $groupe; 
+							$button_group_id +=1;
+							?>
+							</button>
+						<?php } ?>
 						</div>
 						<div class="panel-footer">
 							<div style = "text-align:right">
 								<button type="button" class="btn btn-primary" >Modifier</button>
 								&nbsp;
 
-								<button type="button" class="btn btn-danger" >Supprimer</button>
+								<button type="button" class="btn btn-danger" onclick="javascript:supprimerGroupe(allerClickedGroup)">Supprimer</button>
+
 							</div>
 						</div>
 					</div>
@@ -195,30 +201,32 @@
 						<div class ="panel-heading">
 							Participants du groupe
 						</div>
-						<div class = "panel-body">
-							<?php 
-							$groupId = 0;
-							foreach($all_groupes_personnes as $groupe_selected){
-								$noms_array = $groupe_selected[0];
-								$prenoms_array = $groupe_selected[1];
-							?> 	
-							<ul class="list-group" style="display:none" <?php echo "id='retourGroup".strval($groupId)."'"?> >
-							    <?php //AFFICHER LES MEMBRES D'UN GROUPE
-							    echo "group " . strval($groupId) . "</br>";
-							    for($i=0; $i<sizeof($noms_array) && $i<sizeof($prenoms_array); $i++){ ?>
-							    <li class="list-group-item">
-							    	<?php echo $prenoms_array[$i] . " ". $noms_array[$i]. "<br>"; ?>
-							    </li>
-							    <?php     
-							    } 
-							$groupId +=1;
-							?>
+						<div class = "panel-body" style="background-color: #f0f0f5">
+						Les personnes avec qui tu seras pour le bus :
+						</div>
 
-						    </ul>
-						    <?php } ?>
-						 </div>
+						<?php 
+						$groupId = 0;
+						foreach($all_groupes_personnes as $groupe_selected){
+							$noms_array = $groupe_selected[0];
+							$prenoms_array = $groupe_selected[1];
+						?> 	
+						<ul class="list-group" style="display:none" <?php echo "id='retourGroup".strval($groupId)."'"?> >
+						    <?php //AFFICHER LES MEMBRES D'UN GROUPE
+						    echo "group " . strval($groupId) . "</br>";
+						    for($i=0; $i<sizeof($noms_array) && $i<sizeof($prenoms_array); $i++){ ?>
+						    <li class="list-group-item">
+						    	<?php echo $prenoms_array[$i] . " ". $noms_array[$i]. "<br>"; ?>
+						    </li>
+						    <?php     
+						    } 
+						$groupId +=1;
+						?>
+
+					    </ul>
+					    <?php } ?>
+					</div>
 				</div>
-			</div>
 
 			<div class="col-md-2">
 				<div class="panel panel-info">
@@ -350,7 +358,7 @@
 			var i;
 			for(i = 0; i<=10; i++){
 				try{
-				var group_id = "group" + parseInt(i) ; 
+				var group_id = "allerGroup" + parseInt(i) ; 
 				document.getElementById(group_id).style.display = 'none';
 			}
 			catch(err){
@@ -361,14 +369,23 @@
 		function allerShowGroupMembers(j){
 			allerClickedGroup = j;
 			allerHideAllMembers();
-			var group_id = "group" + parseInt(j);
+			var group_id = "allerGroup" + parseInt(j);
 			//alert(group_id);
 			document.getElementById(group_id).style.display = 'block';
 		}
-		function allerSupprimerGroupe(k){
-			if(confirm("Es-tu sûr de vouloir supprimer ce groupe " + k + "?")){
+		//Le groupe sera supprimé pour l'aller comme pour le retour
+		function supprimerGroupe(k){
+			if(k==null)
+				return;
+
+			var aller_suppr_id = "allerButtonGroup" + parseInt(k);
+			var groupName = document.getElementById(aller_suppr_id).textContent.replace(" ","");
+			if(confirm("Es-tu sûr de vouloir supprimer le groupe " + groupName + " ?")){
 				var aller_suppr_id = "allerButtonGroup" + parseInt(k);
 				document.getElementById(aller_suppr_id).style.display = 'none';
+
+				var retour_suppr_id = "retourButtonGroup" + parseInt(k);
+				document.getElementById(retour_suppr_id).style.display = 'none';
 				alert("Groupe supprimé");
 			}
 		}

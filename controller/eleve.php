@@ -4,10 +4,11 @@ include '../model/eleve.php';
 
 // ******* IMPORTANT : décommenter cette section et commenter tout le reste jusque l'avant -dernière ligne pour vous ***********
 // ********** DEBUT SECTION A DECOMMENTER *******************************
-
+/*
 $nom_getted = "Chochod";
 $prenom_getted = "Martin";
 $id = 1;
+$voyage = "WEI";
 
 $voyages = array(array("WEI (aller)"),array("WEI (retour)"), array("WEE"));
 $groupes_array = array("Busboys", "Tivi+", "Bresil");
@@ -22,10 +23,10 @@ $Bresil_noms_array = array("Galaçao", "Cordeiro", "Botazzo", "Roussef");
 
 $all_groupes_personnes = array(array($BusBoys_noms_array, $BusBoys_prenoms_array), array($Tivi_noms_array,$Tivi_prenoms_array), array($Bresil_noms_array, $Bresil_prenoms_array));
 $liste_eleves = array(array('PRENOM'=> "Augustin", 'NOM'=>"MOREL"), array('PRENOM'=> "Godefroy", 'NOM'=>"Galas"));
-
+*/
 // ********** FIN SECTION A DECOMMENTER ********************************
 
-/*
+
 // ********** DEBUT SECTION A COMMENTER ********************************
 //Connexion à la BDD
 $bdd = connectToDB();    
@@ -34,7 +35,7 @@ $bdd = connectToDB();
 $id = $_SESSION['ID'];
 $nom_getted = $_SESSION['NOM'];
 $prenom_getted = $_SESSION['PRENOM'];
-
+$voyage = $_SESSION['NOM_V'];
 	
 // Récupérer les voyages disponibles à la réservation
 $voyages = getVoyagesDispo($bdd, $id); //**** On veut vérifier que la personne est inscrite à ce voyage
@@ -57,7 +58,7 @@ foreach($groupes_array as $group){
 
 // Récupérer la liste BDE
 $liste_eleves = getListeEleves($bdd);
-*/
+
 // ********** FIN SECTION A COMMENTER  ********************************
 
 

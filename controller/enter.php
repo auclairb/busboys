@@ -17,6 +17,8 @@ $resultat = 1;
 $id = 1;
 $nom = "Chochod";
 $prenom = "Martin";
+//Le voyage sera en réalité ajouté après sélection du voyage que l'on veut réserver ***
+$voyage = "WEI";
 
 
 
@@ -30,6 +32,8 @@ else{
 	$_SESSION['NOM'] = $nom;
 	$_SESSION['PRENOM'] = $prenom;
 	$_SESSION['ID'] = $id;
+	//Même remarque pour le voyage ******************
+	$_SESSION['NOM_V'] = $voyage;
 	header("Location: eleve.php");
 	die();
 }
