@@ -77,9 +77,17 @@
 
       <div class="col-sm-6">
         <p>
+          <?php if (ISSET($_GET['login_failure'])){?>
+           <div class="alert alert-danger" role="alert">
+                <strong>Erreur de connexion ! </strong> Veuillez prendre contact avec le BDE si vos identifiants ne fonctionnent pas.
+          </div>
+          <?php
+          } 
+          else {?>
           <div class="alert alert-info" role="alert">
             <strong>Vous pouvez </strong> vous connecter avec les identifiants <strong>reçus par mail.</strong>
           </div>
+          <?php } ?>
         </p>
         <form action="../controller/enter.php" method="post">
           <fieldset class="form-group">

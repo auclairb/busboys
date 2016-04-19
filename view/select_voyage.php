@@ -83,11 +83,28 @@
       </div>
 
         <div class="col-sm-6">
-            <div class="list-group">
-              <button type="button" class="list-group-item">WEI (Septembre)</button>
-              <button type="button" class="list-group-item">WEE (Novembre)</button>
-              <button type="button" class="list-group-item">WES (Janvier)</button>
-              <button type="button" class="list-group-item">WEED (Avril)</button>
-              <button type="button" class="list-group-item">WEFA (Mai)</button>
+          <form action="eleve.php" method="post">
+          <fieldset>
+            <div class="form-group">
+              <?php 
+              $Voy_i = 0;
+              foreach($voyagesDispo as $voyage){ ?>
+              <button type="button" class="list-group-item list-group-item-success" id="NOM_V" name="NOM_V"<?php echo "value = '" . $voyage[0] . "'"?> >
+                <?php echo $voyage[0];?>
+              </button>
+              <?php  
+              $Voy_i +=1 ;
+              } ?>
+
+              <button type="button" class="list-group-item list-group-item-disabled">
+                Voyage à venir ...
+              </button>
+              <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+              <button type="submit" class="btn" method="post">Submit</button>  
             </div>
+            </fieldset>
+            </form>
         </div>
+    </div>
+  </body>
+</html>

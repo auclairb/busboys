@@ -76,18 +76,26 @@
       </div>
 
       <div class="col-sm-6">
-              <div class="alert alert-success" role="alert">
-                <strong>Veuillez vous identifier </strong> en tant que membre du BDE.
-              </div>
+        <?php if (ISSET($_GET['login_failure'])){?>
+        <div class="alert alert-danger" role="alert">
+          <strong>Erreur de connexion ! </strong> Veuillez vérifier vos identifiants admin BDE et vous assurer que vous avez les droits.
+        </div>
+        <?php
+        } 
+        else {?>
+          <div class="alert alert-success" role="alert">
+            <strong>Veuillez vous identifier </strong> en tant que membre du BDE.
+          </div>
+          <?php } ?>
       </div>
 
        <div class="col-sm-6">
 
                     <p>
-                    <label for="inputEmail" class="sr-only">Adresse mail</label>
-                    <input type="email" id="inputEmail" class="form-control" placeholder="Adresse mail" required autofocus>
-                    <label for="inputPassword" class="sr-only">Mot de passe</label>
-                    <input type="password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
+                    <label for="LOGIN_BDE" class="sr-only">Login admin BDE</label>
+                    <input type="text" id="LOGIN_BDE" name="LOGIN_BDE" class="form-control" placeholder="Login admin BDE" required autofocus>
+                    <label for="PSWD" class="sr-only">Mot de passe</label>
+                    <input type="password" id="PSWD" name="PSWD" class="form-control" placeholder="Mot de passe" required>
                     </p>
 
                     <p>

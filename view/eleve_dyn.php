@@ -213,7 +213,6 @@
 						?> 	
 						<ul class="list-group" style="display:none" <?php echo "id='retourGroup".strval($groupId)."'"?> >
 						    <?php //AFFICHER LES MEMBRES D'UN GROUPE
-						    echo "group " . strval($groupId) . "</br>";
 						    for($i=0; $i<sizeof($noms_array) && $i<sizeof($prenoms_array); $i++){ ?>
 						    <li class="list-group-item">
 						    	<?php echo $prenoms_array[$i] . " ". $noms_array[$i]. "<br>"; ?>
@@ -241,14 +240,14 @@
 								Répartition:
 							</div>
 						</div>
-						<div class="checkbox">
+						<div class="radio">
 							<label>
-								<input type="checkbox"> Ligne
+								<input type="radio"> Ligne
 							</label>
 						</div>
 				
-						<div class="checkbox">
-							<label><input type="checkbox"> Bloc</label>
+						<div class="radio">
+							<label><input type="radio"> Bloc</label>
 						</div>
 
 						<div class="row">
@@ -257,19 +256,19 @@
 							</div>
 						</div>
 				
-						<div class="checkbox">
+						<div class="radio">
 							<label>
-								<input type="checkbox"> A l'avant
+								<input type="radio"> A l'avant
 							</label>
 						</div>
 			
-						<div class="checkbox">
-							<label><input type="checkbox"> Au milieu
+						<div class="radio">
+							<label><input type="radio"> Au milieu
 							</label>
 						</div>
 			
-						<div class="checkbox">
-							<label><input type="checkbox"> A l'arrière
+						<div class="radio">
+							<label><input type="radio"> A l'arrière
 							</label>
 						</div>
 					</div>
