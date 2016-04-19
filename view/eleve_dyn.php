@@ -18,7 +18,7 @@
 		<div class="row">
 			<div class="col-md-12" style="text-align:center">
 				<h2>
-					ALLER
+					Voyage <strong>aller</strong> de <?php echo $prenom_getted . " " . $nom_getted; ?>
 				</h2>
 			</div>
 		</div>
@@ -33,11 +33,15 @@
 							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 							</button>
 						</div>
-						<?php foreach ($groupes_array as $groupe){?>
 						<div class="panel-body">
-							<?php echo $groupe; ?>
+							<div class="list-group">
+							<?php foreach ($groupes_array as $groupe){?>
+								<button type="button" class="list-group-item list-group-item-success">
+								<?php echo $groupe; ?>
+								</button>
+							<?php } ?>
+							</div>
 						</div>
-						<?php } ?>
 						<div class="panel-footer">
 							<div style = "text-align:right">
 								<button type="button" class="btn btn-primary" >Modifier</button>
@@ -55,10 +59,14 @@
 							Participants du groupe
 						</div>
 						<div class = "panel-body">
-					    <?php //AFFICHER LES MEMBRES D'UN GROUPE    
-					    for($i=0; $i<sizeof($noms_array) && $i<sizeof($prenoms_array); $i++){ 
-					    	echo $prenoms_array[$i] . " ". $noms_array[$i]. "<br>";
-					    } ?>
+							<ul class="list-group">
+							    <?php //AFFICHER LES MEMBRES D'UN GROUPE    
+							    for($i=0; $i<sizeof($noms_array) && $i<sizeof($prenoms_array); $i++){ ?>
+							    <li class="list-group-item">
+							    	<?php echo $prenoms_array[$i] . " ". $noms_array[$i]. "<br>"; ?>
+							    </li>
+							    <?php } ?>
+						    </ul>
 					</div>
 				</div>
 			</div>
@@ -127,7 +135,7 @@
 		<div class="row">
 			<div class="col-md-12" style="text-align:center">
 				<h2>
-					RETOUR
+					Voyage <strong>retour</strong> de <?php echo $prenom_getted . " " . $nom_getted; ?>
 				</h2>
 			</div>
 		</div>
