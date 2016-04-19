@@ -68,23 +68,34 @@
         <p>Bienvenue sur Telecom Bus Planner. Ici tu vas pouvoir prévoir en toute sérénité tes trajets en bus pour les différents week-end organisés par ton BDE préféré. Si tu souhaites partager le voyage avec tous tes amis, n'hésite pas et connecte toi dès maintenant.</p>
       </div>
 
-      <!-- Page de connexion pour membre BDE-->
-     <div class="page-header">
-            <h1>Connexion membre BDE</h1>
-     </div>
+
+
+      <!-- Connexion BDE -->
+      <div class="page-header">
+        <h1>Portail BDE</h1>
+      </div>
 
       <div class="col-sm-6">
-              <div class="alert alert-info" role="alert">
-                <strong>Souhaitez-vous</strong> vous connecter en tant qu'élève ou en tant qu'organisateur ?
+              <div class="alert alert-success" role="alert">
+                <strong>Veuillez vous identifier </strong> en tant que membre du BDE.
               </div>
       </div>
 
        <div class="col-sm-6">
-                  <p>
-                    <button class="btn btn-lg btn-primary btn-block">Connexion en tant qu'élève</button>
-                  </p>
 
-                  <p>
-                    <button class="btn btn-lg btn-primary btn-block">Connexion en tant qu'organisateur</button>
-                  </p>
+                    <p>
+                    <label for="inputEmail" class="sr-only">Adresse mail</label>
+                    <input type="email" id="inputEmail" class="form-control" placeholder="Adresse mail" required autofocus>
+                    <label for="inputPassword" class="sr-only">Mot de passe</label>
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
+                    </p>
+
+                    <p>
+                    <button class="btn btn-lg btn-success btn-block" type="submit">CONNEXION BDE</button>
+                    </p>
         </div>
+
+</p>
+
+
+
