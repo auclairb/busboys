@@ -1,9 +1,6 @@
 <?php
 session_start();
-	print_r($_POST);
 
-if(ISSET($_POST['NOM_V']))
-	echo "WOUHOUOOU";
 include '../model/eleve.php';
 
 // ******* IMPORTANT : décommenter cette section et commenter tout le reste jusque l'avant -dernière ligne pour vous ***********
@@ -38,8 +35,8 @@ $bdd = connectToDB();
 $id = $_SESSION['ID'];
 $nom_getted = $_SESSION['NOM'];
 $prenom_getted = $_SESSION['PRENOM'];
-$voyage = $_SESSION['NOM_V'];
-	
+$voyage = $_GET['NOM_V'];
+$_SESSION['NOM_V'] = $voyage;	
 // Récupérer les voyages disponibles à la réservation
 $voyages = getVoyagesDispo($bdd, $id); //**** On veut vérifier que la personne est inscrite à ce voyage
 

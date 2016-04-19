@@ -103,14 +103,14 @@
 								Répartition:
 							</div>
 						</div>
-						<div class="checkbox">
+						<div class="radio">
 							<label>
-								<input type="checkbox"> Ligne
+								<input type="radio"> Ligne
 							</label>
 						</div>
 				
-						<div class="checkbox">
-							<label><input type="checkbox"> Bloc</label>
+						<div class="radio">
+							<label><input type="radio"> Bloc</label>
 						</div>
 
 						<div class="row">
@@ -119,19 +119,19 @@
 							</div>
 						</div>
 				
-						<div class="checkbox">
+						<div class="radio">
 							<label>
-								<input type="checkbox"> A l'avant
+								<input type="radio"> A l'avant
 							</label>
 						</div>
 			
-						<div class="checkbox">
-							<label><input type="checkbox"> Au milieu
+						<div class="radio">
+							<label><input type="radio"> Au milieu
 							</label>
 						</div>
 			
-						<div class="checkbox">
-							<label><input type="checkbox"> A l'arrière
+						<div class="radio">
+							<label><input type="radio"> A l'arrière
 							</label>
 						</div>
 					</div>
@@ -189,7 +189,7 @@
 								<button type="button" class="btn btn-primary" >Modifier</button>
 								&nbsp;
 
-								<button type="button" class="btn btn-danger" onclick="javascript:supprimerGroupe(allerClickedGroup)">Supprimer</button>
+								<button type="button" class="btn btn-danger" onclick="javascript:supprimerGroupe(retourClickedGroup)">Supprimer</button>
 
 							</div>
 						</div>
@@ -340,7 +340,7 @@
 	</div>
 
 	<script type="text/javascript">
-		var allerClickedGroup;
+		var allerClickedGroup, retourClickedGroup;
 		function goToRetour(){
 			document.getElementById('formulaire_aller').style.display = 'none';
 			document.getElementById('formulaire_retour').style.display = 'block';
@@ -350,7 +350,7 @@
 			document.getElementById('formulaire_aller').style.display = 'block';
 		}
 		function submitAllerEtRetour(){
-			alert("Merci pour votre submittage !");
+			window.location.href = "validation.php";
 		}
 		
 		function allerHideAllMembers(){
@@ -402,6 +402,7 @@
 			}
 		}
 		function retourShowGroupMembers(j){
+			retourClickedGroup = j;
 			retourHideAllMembers();
 			var group_id = "retourGroup" + parseInt(j);
 			//alert(group_id);
