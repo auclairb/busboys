@@ -52,7 +52,7 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Accueil</a></li>
-            <li><a href="#apropos">A propos</a></li>
+            <li><a href="a_propos.php">A propos</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -76,22 +76,24 @@
       </div>
 
       <div class="col-sm-6">
-              <p>
-              <div class="alert alert-info" role="alert">
-                <strong>Vous pouvez </strong> vous connecter avec les identifiants <strong>reçus par mail.</strong>
-              </div>
-              </p>
-
-                  <p>
-                  <label for="inputEmail" class="sr-only">Adresse mail</label>
-                  <input type="email" id="inputEmail" class="form-control" placeholder="Adresse mail" required autofocus>
-                  <label for="inputPassword" class="sr-only">Mot de passe</label>
-                  <input type="password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
-                  </p>
-
-                  <p>
-                  <button class="btn btn-lg btn-primary btn-block" type="submit">CONNEXION</button>
-                  </p>
+        <p>
+          <div class="alert alert-info" role="alert">
+            <strong>Vous pouvez </strong> vous connecter avec les identifiants <strong>reçus par mail.</strong>
+          </div>
+        </p>
+        <form action="../controller/enter.php" method="post">
+          <fieldset class="form-group">
+            <p>
+              <label for="ID" class="sr-only">Login</label>
+              <input type="text" id="LOGIN" name="LOGIN" class="form-control" placeholder="Login" required autofocus>
+              <label for="PSWD" class="sr-only">Mot de passe</label>
+              <input type="password" id="PSWD " name="PSWD" class="form-control" placeholder="Mot de passe" required>
+            </p>
+            <p>
+              <button class="btn btn-lg btn-primary btn-block" type="submit" method="post">CONNEXION</button>
+            </p>
+          </fieldset>
+        </form>
       </div>
 
        <div class="col-sm-6">
@@ -102,9 +104,10 @@
                   </p>
 
                   <p>
-                  <button class="btn btn-lg btn-success btn-block" type="submit">PORTAIL BDE</button>
+                  <button class="btn btn-lg btn-success btn-block" type="submit" onclick="window.location.href ='login_admin.php';">PORTAIL BDE</button>
                   </p>
         </div>
-
-
+      </div>
+    </body>
+  </html>
 
