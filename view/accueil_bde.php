@@ -64,9 +64,11 @@
 
     <div class="container theme-showcase" role="main">
       <div class="jumbotron">
-	<h2>
-	  Bonjour <?php echo $prenom_getted . " " . $nom_getted; ?>
-	</h2>
+
+        <h1>
+          Bienvenue <?php echo $prenom_getted . " !"; ?>
+        </h1>
+
       </div>
       <div class="page-header">
         <h1>Que voulez-vous faire ?</h1>
@@ -75,16 +77,17 @@
 	<div class="alert alert-info" role="alert">
 	  <strong>Réservez</strong> vos places pour un futur voyage ?
 	</div>
-	<button class="btn btn-lg btn-primary btn-block" type="button" onclick="goToEleve()">Portail de réservation</button>
+        <button class="btn btn-lg btn-primary btn-block" type="button" onclick="goToEleve()">RESERVER</button>
       </div>
       <div class="col-md-6">
-	<div class="alert alert-info" role="alert">
-	  <strong>Création</strong> d'un nouveau voyage ?
+        <div class="alert alert-success" role="alert">
+          <strong>Créer</strong> un nouveau voyage ?
 	</div>
-	<button class="btn btn-lg btn-success btn-block" type="button" data-toggle="modal" data-target="#myModal" onclick="goToBDE()" >Portail de création</button>
+        <button class="btn btn-lg btn-success btn-block" type="button" data-toggle="modal" data-target="#myModal" onclick="goToBDE()" >CREER UN VOYAGE</button>
       </div>
     </div>
 </nav>
+
 <script>
   function goToBDE(){
   window.location.href = "bde.php";
