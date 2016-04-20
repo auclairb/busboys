@@ -76,7 +76,7 @@
       </div>
 
       <div class="col-sm-6">
-        <?php if (ISSET($_GET['login_failure'])){?>
+        <?php if (ISSET($_GET['login_admin_failure'])){?>
         <div class="alert alert-danger" role="alert">
           <strong>Erreur de connexion ! </strong> Veuillez vérifier vos identifiants admin BDE et vous assurer que vous avez les droits.
         </div>
@@ -90,7 +90,8 @@
       </div>
 
        <div class="col-sm-6">
-
+          <form action="enter_admin.php" method="post">
+          <fieldset>
                     <p>
                     <label for="LOGIN_BDE" class="sr-only">Login admin BDE</label>
                     <input type="text" id="LOGIN_BDE" name="LOGIN_BDE" class="form-control" placeholder="Login admin BDE" required autofocus>
@@ -101,9 +102,10 @@
                     <p>
                     <button class="btn btn-lg btn-success btn-block" type="submit">CONNEXION BDE</button>
                     </p>
+                    </fieldset>
+                    </form>
         </div>
 
 </p>
-
-
+</div></body></html>
 

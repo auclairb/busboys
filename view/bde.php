@@ -17,8 +17,11 @@
 	<div id="header_aller">
 	    <div class="col-md-12" style="text-align:center">
 	      <h2>
-		Voyage <strong> <?php echo $voyage; ?> aller</strong> de <?php echo $prenom_getted . " " . $nom_getted; ?>
-	      </h2>
+			Bienvenue admin <strong><?php echo $prenom_getted . " " . $nom_getted; ?> </strong> !
+			</br>
+			</h2>
+			Entrée des données pour le voyage <strong> ALLER </strong>
+			
 	    </div>
 	  </div>
 	</div>
@@ -27,8 +30,11 @@
 	<div id="header_retour" style="display:none">
 	    <div class="col-md-12" style="text-align:center">
 	      <h2>
-		Voyage <strong>retour</strong> de <?php echo $prenom_getted . " " . $nom_getted; ?>
-	      </h2>
+			Bienvenue admin <strong><?php echo $prenom_getted . " " . $nom_getted; ?> </strong> !
+			</br>
+		</h2>
+			Entrée des données pour le voyage <strong> RETOUR </strong>
+	      
 	    </div>
 	  </div>
 	</div>
