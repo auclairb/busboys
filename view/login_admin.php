@@ -99,11 +99,18 @@
                     </p>
 
                     <p>
-                    <button class="btn btn-lg btn-success btn-block" type="submit">CONNEXION BDE</button>
+                      <button class="btn btn-lg btn-success btn-block" type="submit" onclick="goToBDE()">CONNEXION BDE</button>
                     </p>
         </div>
 
 </p>
+<script>
+  function goToBDE(){
+  window.location.href = "accueil_bde.php";
+  }
+</script>
+</body>
+</html>
 
 
 
