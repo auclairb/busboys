@@ -61,17 +61,18 @@
 <div class="container theme-showcase" role="main">
 
 
-
       <!-- En-tête -->
       <div class="jumbotron">
-        <h1>Votre validation a bien été enregistrée !</h1>
-        <p>Vous pouvez revenir à la page d'accueil en cliquant sur la barre de navigation en haut de votre écran.</p>
+        <h1>Vos modifications ont bien été enregistrées !</h1>
+        <p>Vous pouvez revenir à la page d'accueil utilisant la barre de navigation en haut de votre écran.
+        Vous pouvez à nouveau créer un voyage ou réserver en utilisant le portail de réservation. </p>
       </div>
 
 
 
+
    <p align="center">
-        <IMG src="check.png" alt="Validation" border="0" width="500" height="500">
+        <IMG src="picture/check.png" alt="Validation" border="0" width="500" height="500">
     </p>
 <script>
 
@@ -82,5 +83,13 @@ function goToAPropos(){
 window.location.href = "a_propos.php";
 }
 </script>
+
+
+
+
+
+
+
+
 </body>
 </html>
