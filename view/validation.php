@@ -72,5 +72,5 @@
 
 
    <p align="center">
-        <IMG src="check.png" alt="Validation" border="0" width="500" height="500">
+        <IMG src="picture/check.png" alt="Validation" border="0" width="500" height="500">
     </p>
