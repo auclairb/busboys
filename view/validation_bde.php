@@ -47,18 +47,16 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#" onclick="goToMain()"">Telecom Bus Planner</a>
+          <a class="navbar-brand" href="#">Telecom Bus Planner</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active" onclick="goToMain()"><a href="#">Accueil</a></li>
-            <li><a href="#apropos" onclick="goToAPropos()">A propos</a></li>
+            <li><a href="login.php">Accueil</a></li>
+            <li><a href="a_propos.php">A propos</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-
-    <div class="container theme-showcase" role="main">
 
 
 
