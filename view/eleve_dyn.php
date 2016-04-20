@@ -59,7 +59,7 @@
 					</div>
 				</div>
 
-				<div class="col-md-2">
+				<div class="col-md-3">
 					<div class ="panel panel-success">
 						<div class ="panel-heading">
 							Participants du groupe
@@ -196,7 +196,7 @@
 					</div>
 				</div>
 
-				<div class="col-md-2">
+				<div class="col-md-3">
 					<div class ="panel panel-info">
 						<div class ="panel-heading">
 							Participants du groupe
