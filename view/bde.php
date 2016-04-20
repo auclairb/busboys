@@ -6,6 +6,90 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	
+	<link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+      <!--<script src="http://code.jquery.com/jquery-1.10.2.js"></script> -->
+      <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+      <!-- CSS -->
+      <style>
+         .ui-widget-header {
+            background:#b9cd6d;
+            border: 1px solid #b9cd6d;
+            color: #FFFFFF;
+            font-weight: bold;
+         }
+         .ui-widget-content {
+            background: #cedc98;
+            border: 1px solid #DDDDDD;
+            color: #333333;
+         }
+         #resizable { width: 300px; height: 150px; padding: 0.5em;
+            text-align: center; margin: 0; }
+	    .seat-div { height: 15px; width: 15px; margin: 5px; float: left; }
+	    .corridor-div { height: 15px; width: 15px; margin: 5px; float: left; }
+      </style>
+
+      <!-- Javascript for bus -->
+      <script>
+         $(function() {
+            $( "#resizable" ).resizable({
+  	        resize: function( event, ui ) {
+		$( ".seat-div" ).remove();
+		$( ".corridor-div" ).remove();
+		$( ".row-break" ).remove();
+		var seatWidth = 15;
+    		var n_seats = Math.floor(ui.size.width/(seatWidth + 10));
+		for (j = 0; j < 5; j++)
+		{
+			if (j == 2)
+			{
+				for (i = 1; i <= n_seats; i++)
+				{
+		    		var new_corridor = '<div class="corridor-div"><img src="picture/couloir.png"></div>';
+				if (i == n_seats)
+				{
+				    new_corridor = '<div class="seat-div"><img src="picture/seat.png" class="seat-img" ></div>';
+				}
+		    		$( "#resizable" ).append( new_corridor );
+				}
+			}
+			else
+			{
+				for (i = 1; i <= n_seats; i++)
+				{
+		    		var new_seat = '<div class="seat-div"><img src="picture/seat.png" class="seat-img" ></div>';
+		    		$( "#resizable" ).append( new_seat );
+				}
+			}
+			
+			$( "#resizable" ).append( "<br class='row-break'>" );
+		}
+		   $(".seat-img").click(function () {
+		   if ($(this).attr("src") == "picture/seat.png")
+		   {
+			
+			$(this).attr("src" , "picture/seat-reserved.png");
+		   }
+		   else if ($(this).attr("src") == "picture/seat-reserved.png")
+		   {
+			$(this).attr("src", "picture/noseat.png");
+		   }
+		   else
+		   {
+			$(this).attr("src", "picture/seat.png");
+		   }
+
+	    });
+
+  	        }
+
+	    });
+	    $( "#resizable" ).on( "resize", function( event, ui ) {} );
+         });
+	
+      </script>
+	
 </head>
 <body>
 
@@ -55,6 +139,7 @@
 						</div>
 						<div class="panel-body">
 						   <div class="list-group">
+						
 						      <div class="raw"> <div class="col-md-12"> Bus 1: 38 places dont 11 réservées</div></div>
 					  	   </div>
 						</div>
@@ -139,6 +224,7 @@
 			      
 			              <div class="panel-body">
 			              <div class="row">
+						  <div id="resizable" class="ui-widget-content"></div>
 				          <div class="col-md-12">
 				             Nombre de places assises:
 				             <input type="text" class="form-control" placeholder="20,40,60..." aria-describedby="basic-addon1">
