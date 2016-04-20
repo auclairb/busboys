@@ -100,7 +100,7 @@
                     </p>
 
                     <p>
-                    <button class="btn btn-lg btn-success btn-block" type="submit">CONNEXION BDE</button>
+                      <button class="btn btn-lg btn-success btn-block" type="submit">CONNEXION BDE</button>
                     </p>
                     </fieldset>
                     </form>
@@ -108,4 +108,3 @@
 
 </p>
 </div></body></html>
-
