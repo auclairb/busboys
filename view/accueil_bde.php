@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>BUS PLANNER</title>
+    <title>BUS PLANNER: Accueil BDE</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -58,53 +58,45 @@
       </div>
     </nav>
 
-<div class="container theme-showcase" role="main">
+    <div class="container theme-showcase" role="main">
 
 
 
-      <!-- En-tête -->
+    <div class="container theme-showcase" role="main">
       <div class="jumbotron">
-        <h1>Telecom Bus Planner</h1>
-        <p>Bienvenue sur Telecom Bus Planner. Ici tu vas pouvoir prévoir en toute sérénité tes trajets en bus pour les différents week-end organisés par ton BDE préféré. Si tu souhaites partager le voyage avec tous tes amis, n'hésite pas et connecte toi dès maintenant.</p>
+	<h2>
+	  Bonjour <?php echo $prenom_getted . " " . $nom_getted; ?>
+	</h2>
       </div>
-
-
-
-      <!-- Connexion BDE -->
       <div class="page-header">
-        <h1>Portail BDE</h1>
+        <h1>Que voulez-vous faire ?</h1>
       </div>
-
-      <div class="col-sm-6">
-        <?php if (ISSET($_GET['login_admin_failure'])){?>
-        <div class="alert alert-danger" role="alert">
-          <strong>Erreur de connexion ! </strong> Veuillez vérifier vos identifiants admin BDE et vous assurer que vous avez les droits.
-        </div>
-        <?php
-        } 
-        else {?>
-          <div class="alert alert-success" role="alert">
-            <strong>Veuillez vous identifier </strong> en tant que membre du BDE.
-          </div>
-          <?php } ?>
+      <div class="col-md-6">
+	<div class="alert alert-info" role="alert">
+	  <strong>Réservez</strong> vos places pour un futur voyage ?
+	</div>
+	<button class="btn btn-lg btn-primary btn-block" type="button" onclick="goToEleve()">Portail de réservation</button>
       </div>
+      <div class="col-md-6">
+	<div class="alert alert-info" role="alert">
+	  <strong>Création</strong> d'un nouveau voyage ?
+	</div>
+	<button class="btn btn-lg btn-success btn-block" type="button" data-toggle="modal" data-target="#myModal" onclick="goToBDE()" >Portail de création</button>
+      </div>
+    </div>
+</nav>
+<script>
+  function goToBDE(){
+  window.location.href = "bde.php";
+  }
+  function goToEleve(){
+  window.location.href = "select_voyage.php";
+  }
+  function goToAPropos(){
+  window.location.href = "a_propos.php";
+  }
+</script>
 
-       <div class="col-sm-6">
-          <form action="enter_admin.php" method="post">
-          <fieldset>
-                    <p>
-                    <label for="LOGIN_BDE" class="sr-only">Login admin BDE</label>
-                    <input type="text" id="LOGIN_BDE" name="LOGIN_BDE" class="form-control" placeholder="Login admin BDE" required autofocus>
-                    <label for="PSWD" class="sr-only">Mot de passe</label>
-                    <input type="password" id="PSWD" name="PSWD" class="form-control" placeholder="Mot de passe" required>
-                    </p>
+  </body>
 
-                    <p>
-                      <button class="btn btn-lg btn-success btn-block" type="submit">CONNEXION BDE</button>
-                    </p>
-                    </fieldset>
-                    </form>
-        </div>
-
-</p>
-</div></body></html>
+</html>

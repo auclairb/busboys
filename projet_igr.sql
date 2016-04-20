@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 20 Avril 2016 à 12:16
+-- Généré le :  Mer 20 Avril 2016 à 20:28
 -- Version du serveur :  5.7.9
 -- Version de PHP :  5.6.16
 
@@ -41,17 +41,18 @@ CREATE TABLE IF NOT EXISTS `groupes` (
   `P9` int(11) DEFAULT NULL,
   `P10` int(11) DEFAULT NULL,
   PRIMARY KEY (`ID_G`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `groupes`
 --
 
 INSERT INTO `groupes` (`ID_G`, `NOM_G`, `P1`, `P2`, `P3`, `P4`, `P5`, `P6`, `P7`, `P8`, `P9`, `P10`) VALUES
-(1, 'BusBoys', 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(2, 'JE', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(3, 'TEST', 1, 4, 3, 2, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, 'Funky Town', 1, 4, 3, 2, NULL, NULL, NULL, NULL, NULL, NULL);
+(2, 'JE', 2, 6, 7, 8, 9, NULL, NULL, NULL, NULL, NULL),
+(1, 'BusBoys', 1, 4, 3, 2, NULL, NULL, NULL, NULL, NULL, NULL),
+(4, 'MiFa', 2, 3, 8, 10, 11, 12, NULL, NULL, NULL, NULL),
+(5, 'PROFS', 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(6, 'Muscu', 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -85,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `liste_bde` (
   `GROUPE3` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`ID`),
   KEY `NOM` (`NOM`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `liste_bde`
@@ -95,7 +96,16 @@ INSERT INTO `liste_bde` (`ID`, `NOM`, `PRENOM`, `LOGIN`, `MDP`, `STATUT`, `GROUP
 (1, 'Auclair', 'Benjamin', 'bauclair', '1234', 1, 'BusBoys', NULL, NULL),
 (2, 'Chochod', 'Martin', 'mchochod', '1234', 1, 'BusBoys', 'JE', NULL),
 (3, 'Cardoso Cordeiro', 'Bernardo', 'bcardoso', '4321', 1, 'Bresil', 'BusBoys', 'MiFa'),
-(4, 'Morel', 'Augustin', 'amorel', '5678', 1, 'TIVI+', NULL, NULL);
+(4, 'Morel', 'Augustin', 'amorel', '5678', 1, 'TIVI+', NULL, NULL),
+(5, 'Lecolinet', 'Eric', 'elc', '1234', 1, 'PROFS', 'Team IGR', NULL),
+(6, 'Heurtaux', 'Philippe', 'pheurtaux', '1234', 1, 'JE', 'Muscu', NULL),
+(7, 'Nguyen', 'Berenice', 'bnguyen', '1234', 1, 'JE', NULL, NULL),
+(8, 'Taconet', 'Robin', 'rtaconet', '1234', 1, 'JE', NULL, NULL),
+(9, 'Cherel', 'Nicolas', 'ncherel', '1234', 1, 'JE', NULL, NULL),
+(10, 'Galas', 'Godefroy', 'ggalas', '1234', 2, 'MiFa', 'Excalibed', NULL),
+(11, 'Wagner', 'Jonathan', 'jwagner', '1234', 1, 'MiFa', NULL, NULL),
+(12, 'Pierru', 'Marie', 'mpierru', '1234', 1, 'MiFa', NULL, NULL),
+(13, 'Rouillet', 'Antoine', 'arouillet', '1234', 2, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 

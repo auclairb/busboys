@@ -93,7 +93,33 @@
 </head>
 <body>
 
-	<div class="container-fluid" style="text-align:center"> 
+
+
+    <!-- Barre de navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Telecom Bus Planner</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="login.php">Accueil</a></li>
+            <li><a href="a_propos.php">A propos</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+        <div class="container theme-showcase" role="main">
+
+
+<div class="container-fluid" style="text-align:center">
 		<h1>BUS Planner-Session BDE</h1>
 	</div>
 
@@ -101,8 +127,11 @@
 	<div id="header_aller">
 	    <div class="col-md-12" style="text-align:center">
 	      <h2>
-		Voyage <strong> <?php echo $voyage; ?> aller</strong> de <?php echo $prenom_getted . " " . $nom_getted; ?>
-	      </h2>
+			Bienvenue admin <strong><?php echo $prenom_getted . " " . $nom_getted; ?> </strong> !
+			</br>
+			</h2>
+			Entrée des données pour le voyage <strong> ALLER </strong>
+			
 	    </div>
 	  </div>
 	</div>
@@ -111,8 +140,11 @@
 	<div id="header_retour" style="display:none">
 	    <div class="col-md-12" style="text-align:center">
 	      <h2>
-		Voyage <strong>retour</strong> de <?php echo $prenom_getted . " " . $nom_getted; ?>
-	      </h2>
+			Bienvenue admin <strong><?php echo $prenom_getted . " " . $nom_getted; ?> </strong> !
+			</br>
+		</h2>
+			Entrée des données pour le voyage <strong> RETOUR </strong>
+	      
 	    </div>
 	  </div>
 	</div>

@@ -64,47 +64,23 @@
 
       <!-- En-tête -->
       <div class="jumbotron">
-        <h1>Telecom Bus Planner</h1>
-        <p>Bienvenue sur Telecom Bus Planner. Ici tu vas pouvoir prévoir en toute sérénité tes trajets en bus pour les différents week-end organisés par ton BDE préféré. Si tu souhaites partager le voyage avec tous tes amis, n'hésite pas et connecte toi dès maintenant.</p>
+        <h1>Votre validation a bien été enregistrée !</h1>
+        <p>Vous pouvez revenir à la page d'accueil en cliquant sur la barre de navigation en haut de votre écran.</p>
       </div>
 
 
 
-      <!-- Connexion BDE -->
-      <div class="page-header">
-        <h1>Portail BDE</h1>
-      </div>
+   <p align="center">
+        <IMG src="check.png" alt="Validation" border="0" width="500" height="500">
+    </p>
+<script>
 
-      <div class="col-sm-6">
-        <?php if (ISSET($_GET['login_admin_failure'])){?>
-        <div class="alert alert-danger" role="alert">
-          <strong>Erreur de connexion ! </strong> Veuillez vérifier vos identifiants admin BDE et vous assurer que vous avez les droits.
-        </div>
-        <?php
-        } 
-        else {?>
-          <div class="alert alert-success" role="alert">
-            <strong>Veuillez vous identifier </strong> en tant que membre du BDE.
-          </div>
-          <?php } ?>
-      </div>
-
-       <div class="col-sm-6">
-          <form action="enter_admin.php" method="post">
-          <fieldset>
-                    <p>
-                    <label for="LOGIN_BDE" class="sr-only">Login admin BDE</label>
-                    <input type="text" id="LOGIN_BDE" name="LOGIN_BDE" class="form-control" placeholder="Login admin BDE" required autofocus>
-                    <label for="PSWD" class="sr-only">Mot de passe</label>
-                    <input type="password" id="PSWD" name="PSWD" class="form-control" placeholder="Mot de passe" required>
-                    </p>
-
-                    <p>
-                      <button class="btn btn-lg btn-success btn-block" type="submit">CONNEXION BDE</button>
-                    </p>
-                    </fieldset>
-                    </form>
-        </div>
-
-</p>
-</div></body></html>
+function goToMain(){
+window.location.href = "accueil_bde.php";
+}
+function goToAPropos(){
+window.location.href = "a_propos.php";
+}
+</script>
+</body>
+</html>
