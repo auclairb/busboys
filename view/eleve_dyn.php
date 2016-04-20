@@ -297,15 +297,14 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times</span></button>
-				<h4 class="modal-title" id="myModalLabel">Creer groupe:</h4>
+				<h4 class="modal-title" id="myModalLabel">Créer un nouveau groupe de voyage :</h4>
 			</div>
 			<div class="modal-body">
-
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="input-group">
-							<span class="input-group-addon">Nom du futur groupe:</span>
-							<input type="text" class="form-control" aria-label="...">
+							<span class="input-group-addon">Nom du futur groupe</span>
+							<input type="text" class="form-control" aria-label="..." autofocus required>
 						</div><!-- /input-group -->
 					</div><!-- /.col-lg-6 -->
 				</div>
@@ -316,30 +315,42 @@
 
 				<div class="col-md-4">
 					<div class="panel panel-default">
-						<div class="panel-heading">Elèves:</div>
-						<?php foreach($liste_eleves as $eleve){ ?>
-						<div class="panel-body">
-							<?php echo $eleve['PRENOM'] . " " . $eleve['NOM']; ?>
+						<div class="panel-heading">Liste des élèves:
 						</div>
-						<?php } ?>
+						<div class="list-group">
+						<?php 
+						$eleveId = 0;
+						foreach($liste_eleves as $eleve){ ?>
+							<button type="button" class="list-group-item" id= <?php echo "'eleve" . $eleveId . "'"?> onclick = <?php echo stripcslashes("\"addEleve(" . $eleveId . ",'" . $eleve['PRENOM'] ."','". $eleve['NOM'] . "');\""); ?>>
+							<?php echo $eleve['PRENOM'] . " " . $eleve['NOM']; ?>
+							</button>
+						<?php 
+						$eleveId +=1;
+						} ?>
+						</div>
 					</div>
 				</div>
 
 				<div class="col-md-4">
 					<div class="panel panel-default">
-						<div class="panel-heading">Participants:</div>
-						<div class="panel-body">Augustin MOREL</div>
+						<div class="panel-heading">Liste des membres du groupe :</div>
+						<ul class="list-group" id="participants"></ul>
 					</div>
 				</div>
 
 				<div class="modal-footer">
-					<button type="button" class="btn btn-primary">Sauvegarder</button>
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Sauvegarder</button>
 				</div>
 			</div>
 		</div>
 	</div>
 
 	<script type="text/javascript">
+
+		function addEleve(id,prenom,nom){
+			var tmp = "eleve" + parseInt(id);
+			document.getElementById("participants").innerHTML += "<li class='list-group-item'>" + prenom + " " + nom + "</li>";
+		}
 		var allerClickedGroup, retourClickedGroup;
 		function goToRetour(){
 			document.getElementById('formulaire_aller').style.display = 'none';
