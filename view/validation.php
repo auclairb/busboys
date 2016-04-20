@@ -64,9 +64,9 @@
 
       <!-- En-tête -->
       <div class="jumbotron">
-        <h1>Votre validation a bien été enregistrée !</h1>
-        <p>Vous pouvez revenir à la page d'accueil en cliquant sur la barre de navigation en haut de votre écran.
-        Vous pouvez à nouveau modifier votre validation avant la date fixée par le BDE.</p>
+        <h1>Vos modifications ont bien été enregistrées !</h1>
+        <p>Vous pouvez revenir à la page d'accueil utilisant la barre de navigation en haut de votre écran.
+        Vous pouvez à nouveau modifier votre voyage avant la date fixée par le BDE.</p>
       </div>
 
 
