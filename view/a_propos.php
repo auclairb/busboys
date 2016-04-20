@@ -61,15 +61,6 @@
     <div class="container theme-showcase" role="main">
 
 
-
-      <!-- En-tête -->
-      <div class="jumbotron">
-        <h1>Telecom Bus Planner</h1>
-        <p>Bienvenue sur Telecom Bus Planner. Ici tu vas pouvoir prévoir en toute sérénité tes trajets en bus pour les différents week-end organisés par ton BDE préféré. Si tu souhaites partager le voyage avec tous tes amis, n'hésite pas et connecte toi dès maintenant.</p>
-      </div>
-
-
-
     <div class="container">
 
       <div class="page-header">

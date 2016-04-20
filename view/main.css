@@ -1,7 +1,11 @@
 body {
   padding-top: 70px;
   padding-bottom: 30px;
+  background-color: #F2F4F3;
+  }
 }
+
+
 
 .theme-dropdown .dropdown-menu {
   position: static;
