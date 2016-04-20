@@ -51,12 +51,14 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="login.php">Accueil</a></li>
+            <li class="active"><a href="#">Accueil</a></li>
             <li><a href="a_propos.php">A propos</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
+
+    <div class="container theme-showcase" role="main">
 
 
 

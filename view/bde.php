@@ -32,6 +32,8 @@
       </div>
     </nav>
 
+        <div class="container theme-showcase" role="main">
+
 
 <div class="container-fluid" style="text-align:center">
 		<h1>BUS Planner-Session BDE</h1>
