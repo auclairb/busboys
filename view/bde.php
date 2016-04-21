@@ -110,8 +110,10 @@
 						</div>
 						<div class="panel-body">
 						   <div class="list-group">
-						      <div class="raw"> <div class="col-md-12"> Bus 1: 38 places dont 11 réservées</div></div>
-					  	   </div>
+							<div class="col-md-12" style="display:none" id="magicAller"> <strong>Bus 1:</strong><strong> 60</strong> places dont <strong>10 réservées</strong>
+							</div>
+							</div>
+					  	   
 						</div>
 						<div class="panel-footer">
 							<div style = "text-align:right">
@@ -166,13 +168,13 @@
 					<div class="panel panel-success">
 						<div class="panel-heading">
 							Bus pour ce voyage
-							<button type="button" class="close" data-toggle="modal" data-target="#myModal">
+							<button type="button" class="close" data-toggle="modal" data-target="#myModal2">
 							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 							</button>
 						</div>
 						<div class="panel-body">
 						   <div class="list-group">
-						      <div class="raw"> <div class="col-md-12"> Bus 1: 38 places dont 11 réservées</div></div>
+						      <div class="raw"> <div class="col-md-12" id="magicRetour" style="display:none"> <strong>Bus 1:</strong> <strong> 50</strong> places dont <strong>5 réservées</strong> à destination de la <strong>MAISEL</strong></div></div>
 					  	   </div>
 						</div>
 						<div class="panel-footer">
@@ -247,7 +249,7 @@
 			  </div>
 			  
 			  <div class="modal-footer">
-			  <button type="button" class="btn btn-primary" data-dismiss="modal" >Sauvegarder</button>
+			  <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="document.getElementById('magicAller').style.display = 'block';">Sauvegarder</button>
 			  </div>
 			</div>
 		</div>
@@ -292,7 +294,7 @@
 			  </div>
 			  
 			  <div class="modal-footer">
-			  <button type="button" class="btn btn-primary" data-dismiss="modal" >Sauvegarder</button>
+			  <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="document.getElementById('magicRetour').style.display='block';">Sauvegarder</button>
 			  </div>
 			</div>
 		</div>
