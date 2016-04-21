@@ -1,11 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>BUS Planner-Session élève</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>BUS PLANNER</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="main.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
 
@@ -20,7 +48,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Telecom Bus Planner</a>
+          <a class="navbar-brand" href="login.php">Telecom Bus Planner</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -30,288 +58,313 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
+
     <div class="container theme-showcase" role="main">
 
 
-	<div class="container-fluid" style="text-align:center"> 
-		<h1>BUS Planner-Session élève</h1>
-	</div>
+      <!-- En-tête -->
+      <div class="jumbotron">
+        <h1>Bienvenue <?php echo $prenom_getted . " !"; ?></h1>
+        <p>Ici vous allez pouvoir organiser vos voyages. Vous pouvez apporter des modification à vos réservations jusqu'à la date fixée par le BDE.</p>
+      </div>
 
-	<!-- Formulaire ALLER -->
-	<div class="container-fluid" id="formulaire_aller">
-		<div class="row">
-			<div class="col-md-12" style="text-align:center">
-				<h2>
-					Voyage <strong> <?php echo $voyage; ?> aller</strong> de <?php echo $prenom_getted . " " . $nom_getted; ?>
-				</h2>
-			</div>
-		</div>
 
-		<div class="row">
-			<div class="col-md-12">
-				<div class="col-md-3 col-md-offset-2"> 
-					<div class="panel panel-success">
-						<div class="panel-heading">
-							Mes groupes
-							<button type="button" class="close" data-toggle="modal" data-target="#myModal">
-							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-							</button>
-						</div>
-						<div class = "panel-body" style="background-color: #f0f0f5">
-							Choisis le groupe d'amis avec lesquels tu veux faire l'<strong>aller :</strong>
-						</div>
 
-						<div class="list-group">
-						<?php 
-						$button_group_id = 0;
-						foreach ($groupes_array as $groupe){?>
-							<button type="button" class="list-group-item " onclick= <?php echo stripslashes("\"javascript:allerShowGroupMembers(" . strval($button_group_id) . ");\"");?> id= <?php echo "'allerButtonGroup". strval($button_group_id) . "'";?> >
-							<?php echo $groupe; 
-							$button_group_id +=1;
-							?>
-							</button>
-						<?php } ?>
-						</div>
-						<div class="panel-footer">
-							<div style = "text-align:right">
-								<button type="button" class="btn btn-primary" >Modifier</button>
-								&nbsp;
+        <!-- Formulaire ALLER -->
+        <div class="container-fluid" id="formulaire_aller">
 
-								<button type="button" class="btn btn-danger" onclick="javascript:supprimerGroupe(allerClickedGroup)">Supprimer</button>
-							</div>
-						</div>
-					</div>
-				</div>
 
-				<div class="col-md-3">
-					<div class ="panel panel-success">
-						<div class ="panel-heading">
-							Participants du groupe
-						</div>
-						<div class = "panel-body" style="background-color: #f0f0f5">
-							Les personnes avec qui tu seras pour le bus :
-						</div>
 
-						<?php 
-						$groupId = 0;
-						foreach($all_groupes_personnes as $groupe_selected){
-							$noms_array = $groupe_selected[0];
-							$prenoms_array = $groupe_selected[1];
-						?> 	
-						<ul class="list-group" style="display:none" <?php echo "id='allerGroup".strval($groupId)."'"?> >
-						    <?php //AFFICHER LES MEMBRES D'UN GROUPE
-						    for($i=0; $i<sizeof($noms_array) && $i<sizeof($prenoms_array); $i++){ ?>
-						    <li class="list-group-item">
-						    	<?php echo $prenoms_array[$i] . " ". $noms_array[$i]. "<br>"; ?>
-						    </li>
-						    <?php     
-						    } 
-						$groupId +=1;
-						?>
+      <!-- Page de connexion -->
+      <div class="page-header">
+        <h1>Voyage <strong> <?php echo $voyage; ?> aller</strong> de <?php echo $prenom_getted . " " . $nom_getted; ?></h1>
+      </div>
 
-					    </ul>
-					    <?php } ?>
-					</div>
-				</div>
+      <div class="row">
+                                <div class="col-sm-4">
+                                        <div class="panel panel-info">
+                                                <div class="panel-heading">
+                                                        Mes groupes
+                                                        <button type="button" class="close" data-toggle="modal" data-target="#myModal">
+                                                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                                        </button>
+                                                </div>
+                                                <div class = "panel-body" style="background-color: #f0f0f5">
+                                                        Avec quel groupe d'amis voulez-vous passer l'aller :
+                                                </div>
 
-			<div class="col-md-2">
-				<div class="panel panel-success">
-					<div class="panel-heading">
-						Options:
-					</div>
-					
-					<div class="panel-body">
+                                                <div class="list-group">
+                                                <?php
+                                                $button_group_id = 0;
+                                                foreach ($groupes_array as $groupe){?>
+                                                        <button type="button" class="list-group-item " onclick= <?php echo stripslashes("\"javascript:allerShowGroupMembers(" . strval($button_group_id) . ");\"");?> id= <?php echo "'allerButtonGroup". strval($button_group_id) . "'";?> >
+                                                        <?php echo $groupe;
+                                                        $button_group_id +=1;
+                                                        ?>
+                                                        </button>
+                                                <?php } ?>
+                                                </div>
+                                                <div class="panel-footer">
+                                                        <div style = "text-align:right">
+                                                                <button type="button" class="btn btn-primary" >Modifier</button>
+                                                                &nbsp;
 
-						<div class="row">
-							<div class="col-md-12">
-								Répartition:
-							</div>
-						</div>
-						<div class="radio">
-							<label>
-								<input type="radio"> Ligne
-							</label>
-						</div>
-				
-						<div class="radio">
-							<label><input type="radio"> Bloc</label>
-						</div>
+                                                                <button type="button" class="btn btn-danger" onclick="javascript:supprimerGroupe(allerClickedGroup)">Supprimer</button>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
 
-						<div class="row">
-							<div class="col-md-12">
-								Placement dans le bus:
-							</div>
-						</div>
-				
-						<div class="radio">
-							<label>
-								<input type="radio"> A l'avant
-							</label>
-						</div>
-			
-						<div class="radio">
-							<label><input type="radio"> Au milieu
-							</label>
-						</div>
-			
-						<div class="radio">
-							<label><input type="radio"> A l'arrière
-							</label>
-						</div>
-					</div>
-				</div>
-			</div>
+                                <div class="col-sm-4">
+                                        <div class ="panel panel-info">
+                                                <div class ="panel-heading">
+                                                        Participants du groupe
+                                                </div>
+                                                <div class = "panel-body" style="background-color: #f0f0f5">
+                                                        Vos compagnons de voyage :
+                                                </div>
 
-		</div>
+                                                <?php
+                                                $groupId = 0;
+                                                foreach($all_groupes_personnes as $groupe_selected){
+                                                        $noms_array = $groupe_selected[0];
+                                                        $prenoms_array = $groupe_selected[1];
+                                                ?>
+                                                <ul class="list-group" style="display:none" <?php echo "id='allerGroup".strval($groupId)."'"?> >
+                                                    <?php //AFFICHER LES MEMBRES D'UN GROUPE
+                                                    for($i=0; $i<sizeof($noms_array) && $i<sizeof($prenoms_array); $i++){ ?>
+                                                    <li class="list-group-item">
+                                                        <?php echo $prenoms_array[$i] . " ". $noms_array[$i]. "<br>"; ?>
+                                                    </li>
+                                                    <?php
+                                                    }
+                                                $groupId +=1;
+                                                ?>
 
-		<div class="row"> 
-			<div class="col-md-1 col-md-offset-9"> 
-				<button type="button" class="btn btn-success" onclick="javascript:goToRetour();">Suivant</button>
-			</div>
-		</div>
-	</div>
-	</div>
-	<!-- Fin du formulaire ALLER -->
+                                            </ul>
+                                            <?php } ?>
+                                        </div>
+                                </div>
 
-	<!-- Formulaire RETOUR -->
-	<div class="container-fluid" id="formulaire_retour" style="display:none">
-		<div class="row">
-			<div class="col-md-12" style="text-align:center">
-				<h2>
-					Voyage <strong>retour</strong> de <?php echo $prenom_getted . " " . $nom_getted; ?>
-				</h2>
-			</div>
-		</div>
+                                        <div class="col-sm-4">
+                                                <div class="panel panel-info">
+                                                        <div class="panel-heading">
+                                                                Options:
+                                                        </div>
 
-		<div class="row">
-			<div class="col-md-12">
-				<div class="col-md-3 col-md-offset-2"> 
-					<div class="panel panel-info">
-						<div class="panel-heading">
-							Mes groupes:
-							<button type="button" class="close" data-toggle="modal" data-target="#myModal">
-							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-							</button>
-						</div>
-						<div class = "panel-body" style="background-color: #f0f0f5">
-							Choisis le groupe d'amis avec lesquels tu veux faire le <strong>retour :</strong>
-						</div>
+                                                        <div class="panel-body">
 
-						<div class="list-group">
-						<?php 
-						$button_group_id = 0;
-						foreach ($groupes_array as $groupe){?>
-							<button type="button" class="list-group-item" onclick= <?php echo stripslashes("\"javascript:retourShowGroupMembers(" . strval($button_group_id) . ");\"");?> id= <?php echo "'retourButtonGroup". strval($button_group_id) . "'";?> >
-							<?php echo $groupe; 
-							$button_group_id +=1;
-							?>
-							</button>
-						<?php } ?>
-						</div>
-						<div class="panel-footer">
-							<div style = "text-align:right">
-								<button type="button" class="btn btn-primary" >Modifier</button>
-								&nbsp;
+                                                                <div class="row">
+                                                                        <div class="col-md-12">
+                                                                                Répartition:
+                                                                        </div>
+                                                                </div>
+                                                                <div class="radio">
+                                                                        <label>
+                                                                                <input type="radio"> Ligne
+                                                                        </label>
+                                                                </div>
 
-								<button type="button" class="btn btn-danger" onclick="javascript:supprimerGroupe(retourClickedGroup)">Supprimer</button>
+                                                                <div class="radio">
+                                                                        <label><input type="radio"> Bloc</label>
+                                                                </div>
 
-							</div>
-						</div>
-					</div>
-				</div>
+                                                                <div class="row">
+                                                                        <div class="col-md-12">
+                                                                                Placement dans le bus:
+                                                                        </div>
+                                                                </div>
 
-				<div class="col-md-3">
-					<div class ="panel panel-info">
-						<div class ="panel-heading">
-							Participants du groupe
-						</div>
-						<div class = "panel-body" style="background-color: #f0f0f5">
-						Les personnes avec qui tu seras pour le bus :
-						</div>
+                                                                <div class="radio">
+                                                                        <label>
+                                                                                <input type="radio"> A l'avant
+                                                                        </label>
+                                                                </div>
 
-						<?php 
-						$groupId = 0;
-						foreach($all_groupes_personnes as $groupe_selected){
-							$noms_array = $groupe_selected[0];
-							$prenoms_array = $groupe_selected[1];
-						?> 	
-						<ul class="list-group" style="display:none" <?php echo "id='retourGroup".strval($groupId)."'"?> >
-						    <?php //AFFICHER LES MEMBRES D'UN GROUPE
-						    for($i=0; $i<sizeof($noms_array) && $i<sizeof($prenoms_array); $i++){ ?>
-						    <li class="list-group-item">
-						    	<?php echo $prenoms_array[$i] . " ". $noms_array[$i]. "<br>"; ?>
-						    </li>
-						    <?php     
-						    } 
-						$groupId +=1;
-						?>
+                                                                <div class="radio">
+                                                                        <label><input type="radio"> Au milieu
+                                                                        </label>
+                                                                </div>
 
-					    </ul>
-					    <?php } ?>
-					</div>
-				</div>
+                                                                <div class="radio">
+                                                                        <label><input type="radio"> A l'arrière
+                                                                        </label>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                                </div>
+                                                <div class="col-sm-4 col-sm-offset-8">
+                                                 <button class="btn btn-lg btn-info btn-block" type="submit" onclick="javascript:goToRetour();">SUIVANT</button>
+                                                 </div>
+                                        </div>
 
-			<div class="col-md-2">
-				<div class="panel panel-info">
-					<div class="panel-heading">
-						Options:
-					</div>
-					
-					<div class="panel-body">
+        </div>
 
-						<div class="row">
-							<div class="col-md-12">
-								Répartition:
-							</div>
-						</div>
-						<div class="radio">
-							<label>
-								<input type="radio"> Ligne
-							</label>
-						</div>
-				
-						<div class="radio">
-							<label><input type="radio"> Bloc</label>
-						</div>
 
-						<div class="row">
-							<div class="col-md-12">
-								Placement dans le bus:
-							</div>
-						</div>
-				
-						<div class="radio">
-							<label>
-								<input type="radio"> A l'avant
-							</label>
-						</div>
-			
-						<div class="radio">
-							<label><input type="radio"> Au milieu
-							</label>
-						</div>
-			
-						<div class="radio">
-							<label><input type="radio"> A l'arrière
-							</label>
-						</div>
-					</div>
-				</div>
-			</div>
 
-		</div>
 
-		<div class="row"> 
-			<div class="col-md-1 col-md-offset-8">
-				<button type="button" class="btn btn-warning" onclick="javascript:goBackToAller();">Retour</button>
- 			</div>
-			<div class="col-md-1">
-				<button type="button" class="btn btn-primary" onclick="javascript:submitAllerEtRetour();">Soumettre</button>
-			</div>
-		</div>
-	</div>
-	</div>
-	<!-- Fin du formulaire RETOUR -->
+
+
+
+
+
+        <!-- Fin du formulaire ALLER -->
+
+
+
+
+
+
+
+
+
+        <!-- Formulaire RETOUR -->
+        <div class="container-fluid" id="formulaire_retour" style="display:none">
+
+          <div class="page-header">
+            <h1>Voyage <strong> <?php echo $voyage; ?> retour</strong> de <?php echo $prenom_getted . " " . $nom_getted; ?></h1>
+          </div>
+
+                <div class="row">
+                                <div class="col-sm-4">
+                                        <div class="panel panel-success">
+                                                <div class="panel-heading">
+                                                        Mes groupes:
+                                                        <button type="button" class="close" data-toggle="modal" data-target="#myModal">
+                                                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                                        </button>
+                                                </div>
+                                                <div class = "panel-body" style="background-color: #f0f0f5">
+                                                        Avec quel groupe d'amis voulez-vous passer le retour :
+                                                </div>
+
+                                                <div class="list-group">
+                                                <?php
+                                                $button_group_id = 0;
+                                                foreach ($groupes_array as $groupe){?>
+                                                        <button type="button" class="list-group-item" onclick= <?php echo stripslashes("\"javascript:retourShowGroupMembers(" . strval($button_group_id) . ");\"");?> id= <?php echo "'retourButtonGroup". strval($button_group_id) . "'";?> >
+                                                        <?php echo $groupe;
+                                                        $button_group_id +=1;
+                                                        ?>
+                                                        </button>
+                                                <?php } ?>
+                                                </div>
+                                                <div class="panel-footer">
+                                                        <div style = "text-align:right">
+                                                                <button type="button" class="btn btn-primary" >Modifier</button>
+                                                                &nbsp;
+
+                                                                <button type="button" class="btn btn-danger" onclick="javascript:supprimerGroupe(retourClickedGroup)">Supprimer</button>
+
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+
+                                <div class="col-sm-4">
+                                        <div class ="panel panel-success">
+                                                <div class ="panel-heading">
+                                                        Participants du groupe
+                                                </div>
+                                                <div class = "panel-body" style="background-color: #f0f0f5">
+                                                Vos compagnons de voyage :
+                                                </div>
+
+                                                <?php
+                                                $groupId = 0;
+                                                foreach($all_groupes_personnes as $groupe_selected){
+                                                        $noms_array = $groupe_selected[0];
+                                                        $prenoms_array = $groupe_selected[1];
+                                                ?>
+                                                <ul class="list-group" style="display:none" <?php echo "id='retourGroup".strval($groupId)."'"?> >
+                                                    <?php //AFFICHER LES MEMBRES D'UN GROUPE
+                                                    for($i=0; $i<sizeof($noms_array) && $i<sizeof($prenoms_array); $i++){ ?>
+                                                    <li class="list-group-item">
+                                                        <?php echo $prenoms_array[$i] . " ". $noms_array[$i]. "<br>"; ?>
+                                                    </li>
+                                                    <?php
+                                                    }
+                                                $groupId +=1;
+                                                ?>
+
+                                            </ul>
+                                            <?php } ?>
+                                        </div>
+                                </div>
+
+                        <div class="col-sm-4">
+                                <div class="panel panel-success">
+                                        <div class="panel-heading">
+                                                Options:
+                                        </div>
+
+                                        <div class="panel-body">
+
+                                                <div class="row">
+                                                        <div class="col-md-12">
+                                                                Répartition:
+                                                        </div>
+                                                </div>
+                                                <div class="radio">
+                                                        <label>
+                                                                <input type="radio"> Ligne
+                                                        </label>
+                                                </div>
+
+                                                <div class="radio">
+                                                        <label><input type="radio"> Bloc</label>
+                                                </div>
+
+                                                <div class="row">
+                                                        <div class="col-md-12">
+                                                                Placement dans le bus:
+                                                        </div>
+                                                </div>
+
+                                                <div class="radio">
+                                                        <label>
+                                                                <input type="radio"> A l'avant
+                                                        </label>
+                                                </div>
+
+                                                <div class="radio">
+                                                        <label><input type="radio"> Au milieu
+                                                        </label>
+                                                </div>
+
+                                                <div class="radio">
+                                                        <label><input type="radio"> A l'arrière
+                                                        </label>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+
+</div>
+<div class="row">
+<div class="col-sm-4 col-sm-offset-4">
+                                <button class="btn btn-lg btn-warning btn-block" type="submit" onclick="javascript:goBackToAller();">RETOUR</button>
+                    </div>
+                    <div class="col-sm-4">
+                                <button class="btn btn-lg btn-success btn-block" type="submit" onclick="javascript:submitAllerEtRetour();">SOUMETTRE</button>
+                </div>
+                </div>
+
+
+                </div>
+        
+        </div>
+        
+        </div>
+
+        </div>
+        <!-- Fin du formulaire RETOUR -->
+
+
+
+
+
+
 
 
 
@@ -329,8 +382,8 @@
 						<div class="input-group">
 							<span class="input-group-addon">Nom du futur groupe</span>
 							<input type="text" class="form-control" aria-label="..." autofocus required>
-						</div><!-- /input-group -->
-					</div><!-- /.col-lg-6 -->
+						</div>
+					</div>
 				</div>
 
 			</br>
@@ -444,5 +497,5 @@
 			document.getElementById(group_id).style.display = 'block';
 		}
 	</script>
-</body>
+    </body>
 </html>

@@ -1,95 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>BUS Planner-Session BDE</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	
-	<link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
-      <!--<script src="http://code.jquery.com/jquery-1.10.2.js"></script> -->
-      <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 
-      <!-- CSS -->
-      <style>
-         .ui-widget-header {
-            background:#b9cd6d;
-            border: 1px solid #b9cd6d;
-            color: #FFFFFF;
-            font-weight: bold;
-         }
-         .ui-widget-content {
-            background: #cedc98;
-            border: 1px solid #DDDDDD;
-            color: #333333;
-         }
-         #resizable { width: 300px; height: 150px; padding: 0.5em;
-            text-align: center; margin: 0; }
-	    .seat-div { height: 15px; width: 15px; margin: 5px; float: left; }
-	    .corridor-div { height: 15px; width: 15px; margin: 5px; float: left; }
-      </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
 
-      <!-- Javascript for bus -->
-      <script>
-         $(function() {
-            $( "#resizable" ).resizable({
-  	        resize: function( event, ui ) {
-		$( ".seat-div" ).remove();
-		$( ".corridor-div" ).remove();
-		$( ".row-break" ).remove();
-		var seatWidth = 15;
-    		var n_seats = Math.floor(ui.size.width/(seatWidth + 10));
-		for (j = 0; j < 5; j++)
-		{
-			if (j == 2)
-			{
-				for (i = 1; i <= n_seats; i++)
-				{
-		    		var new_corridor = '<div class="corridor-div"><img src="picture/couloir.png"></div>';
-				if (i == n_seats)
-				{
-				    new_corridor = '<div class="seat-div"><img src="picture/seat.png" class="seat-img" ></div>';
-				}
-		    		$( "#resizable" ).append( new_corridor );
-				}
-			}
-			else
-			{
-				for (i = 1; i <= n_seats; i++)
-				{
-		    		var new_seat = '<div class="seat-div"><img src="picture/seat.png" class="seat-img" ></div>';
-		    		$( "#resizable" ).append( new_seat );
-				}
-			}
-			
-			$( "#resizable" ).append( "<br class='row-break'>" );
-		}
-		   $(".seat-img").click(function () {
-		   if ($(this).attr("src") == "picture/seat.png")
-		   {
-			
-			$(this).attr("src" , "picture/seat-reserved.png");
-		   }
-		   else if ($(this).attr("src") == "picture/seat-reserved.png")
-		   {
-			$(this).attr("src", "picture/noseat.png");
-		   }
-		   else
-		   {
-			$(this).attr("src", "picture/seat.png");
-		   }
+    <title>BUS PLANNER: Accueil BDE</title>
 
-	    });
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
-  	        }
+    <!-- Custom styles for this template -->
+    <link href="main.css" rel="stylesheet">
 
-	    });
-	    $( "#resizable" ).on( "resize", function( event, ui ) {} );
-         });
-	
-      </script>
-	
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
 <body>
 
@@ -105,7 +51,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Telecom Bus Planner</a>
+          <a class="navbar-brand" href="login.php">Telecom Bus Planner</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -119,50 +65,43 @@
         <div class="container theme-showcase" role="main">
 
 
-<div class="container-fluid" style="text-align:center">
-		<h1>BUS Planner-Session BDE</h1>
-	</div>
+      <!-- En-tête -->
+      <div class="jumbotron">
+        <h1>Bienvenue <?php echo $prenom_getted . " !"; ?></h1>
+        <p>Ici vous allez pouvoir gérer les voyages en tant que membre organisateur du BDE. N'oubliez pas de faire vos réservations en tant qu'élève lambda par la suite ...</p>
+      </div>
 
-	<div class="row">
-	<div id="header_aller">
-	    <div class="col-md-12" style="text-align:center">
-	      <h2>
-			Bienvenue admin <strong><?php echo $prenom_getted . " " . $nom_getted; ?> </strong> !
-			</br>
-			</h2>
-			Entrée des données pour le voyage <strong> ALLER </strong>
-			
-	    </div>
-	  </div>
-	</div>
 
-	<div class="row">
-	<div id="header_retour" style="display:none">
-	    <div class="col-md-12" style="text-align:center">
-	      <h2>
-			Bienvenue admin <strong><?php echo $prenom_getted . " " . $nom_getted; ?> </strong> !
-			</br>
-		</h2>
-			Entrée des données pour le voyage <strong> RETOUR </strong>
-	      
-	    </div>
-	  </div>
-	</div>
-	
-	<div class="row">
-	  <p>
-	      <div class="input-group col-md-4 col-md-offset-4">
-		<span class="input-group-addon" id="basic-addon1">Nom du voyage:</span>
-		<input type="text" class="form-control" placeholder="WEI, WEE, WEFA..." aria-describedby="basic-addon1">
-	      </div>
-	    </div>
-	  </p>
 
-	<!-- Formulaire ALLER -->
-	<div class="container-fluid" id="formulaire_aller">
-		<div class="row">
-			<div class="col-md-4 col-md-offset-4"> 
-					<div class="panel panel-success">
+
+<!-- Formulaire ALLER -->
+<div class="container-fluid" id="formulaire_aller">
+      <div class="page-header">
+        <h1>Création d'un voyage - étape 1 : l'aller</h1>
+      </div>
+
+        <div class="container theme-showcase" role="main">
+
+
+                <div class="col-sm-6">
+                        <div class="alert alert-info" role="alert">
+                         Commencez par nommer votre voyage !
+                        </div>
+
+                        <div class="input-group input-group-lg">
+                        <span class="input-group-addon" id="basic-addon1">Nom du voyage:</span>
+                        <input type="text" id="input_voyage" class="form-control" placeholder="WEI, WEE, WEFA..." aria-describedby="basic-addon1">
+                        </div>
+
+                        <br>
+
+                </div>
+
+
+
+
+                        <div class="col-sm-6">
+					<div class="panel panel-info">
 						<div class="panel-heading">
 							Bus pour ce voyage
 							<button type="button" class="close" data-toggle="modal" data-target="#myModal">
@@ -171,7 +110,6 @@
 						</div>
 						<div class="panel-body">
 						   <div class="list-group">
-						
 						      <div class="raw"> <div class="col-md-12"> Bus 1: 38 places dont 11 réservées</div></div>
 					  	   </div>
 						</div>
@@ -183,33 +121,58 @@
 								<button type="button" class="btn btn-danger" onclick="javascript:supprimerGroupe(allerClickedGroup)">Supprimer</button>
 							</div>
 						</div>
-					</div>
-			</div>
-
-		</div>
-
-		<div class="row"> 
-			<div class="col-md-1 col-md-offset-9"> 
-				<button type="button" class="btn btn-success" onclick="javascript:goToRetour();">Suivant</button>
-			</div>
+                                        </div>
+                        <div>
+                                <button class="btn btn-lg btn-info btn-block" type="submit" onclick="javascript:goToRetour();">VALIDER</button>
+                        </div>
+				</div>
 		</div>
 	</div>
+
 	<!-- Fin du formulaire ALLER -->
 
+
+
+
+
+
+
 	<!-- Formulaire RETOUR -->
-	<div class="container-fluid" id="formulaire_retour" style="display:none">
-		<div class="row">
-			<div class="col-md-4 col-md-offset-4"> 
+<div class="container-fluid" id="formulaire_retour" style="display:none">
+      <div class="page-header">
+        <h1>Création d'un voyage - étape 2 : le retour</h1>
+      </div>
+
+        <div class="container theme-showcase" role="main">
+
+
+                <div class="col-sm-6">
+                        <div class="alert alert-success" role="alert">
+                         Votre nouveau voyage :
+                        </div>
+
+                        <div class="input-group input-group-lg">
+                        <span class="input-group-addon" id="basic-addon1">Nom du voyage:</span>
+                        <input type="text" id="nom_voyage" class="form-control" aria-describedby="basic-addon1" disabled="true">
+                        </div>
+
+                        <br>
+                </div>
+
+
+
+
+                        <div class="col-sm-6">
 					<div class="panel panel-success">
 						<div class="panel-heading">
 							Bus pour ce voyage
-							<button type="button" class="close" data-toggle="modal" data-target="#myModal2">
+							<button type="button" class="close" data-toggle="modal" data-target="#myModal">
 							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 							</button>
 						</div>
 						<div class="panel-body">
 						   <div class="list-group">
-						      <div class="raw"> <div class="col-md-12"> Bus 1: 38 places dont 11 réservées à destination de la MAISEL </div></div>
+						      <div class="raw"> <div class="col-md-12"> Bus 1: 38 places dont 11 réservées</div></div>
 					  	   </div>
 						</div>
 						<div class="panel-footer">
@@ -220,21 +183,35 @@
 								<button type="button" class="btn btn-danger" onclick="javascript:supprimerGroupe(allerClickedGroup)">Supprimer</button>
 							</div>
 						</div>
-					</div>
+                                        </div>
+                        <!--div>      				
+        				<button type="button" class="btn btn-lg btn-block btn-primary" onclick="javascript:submitAllerEtRetour();">CREER LE VOYAGE</button>
+                        </div-->
 			</div>
 
-		</div>
+	        <div class="col-sm-6">
+                <button type="button" class="btn btn-lg btn-block btn-warning" onclick="javascript:goBackToAller();">RETOUR</button> 
+            </div>
+            <div class="col-sm-6"> 
+        				<button type="button" class="btn btn-lg btn-block btn-success" onclick="javascript:submitAllerEtRetour();">CREER LE VOYAGE</button>	
+           </div>
 
-		<div class="row"> 
-			<div class="col-md-1 col-md-offset-8">
-				<button type="button" class="btn btn-warning" onclick="javascript:goBackToAller();">Retour</button>
- 			</div>
-			<div class="col-md-1">
-				<button type="button" class="btn btn-primary" onclick="javascript:submitAllerEtRetour();">Soumettre</button>
-			</div>
-		</div>
 	</div>
+
+        
+        
+    </div>
 	<!-- Fin du formulaire RETOUR -->
+        </div>
+
+
+</div>
+
+
+
+
+
+
 
 
 
@@ -256,7 +233,6 @@
 			      
 			              <div class="panel-body">
 			              <div class="row">
-						  <div id="resizable" class="ui-widget-content"></div>
 				          <div class="col-md-12">
 				             Nombre de places assises:
 				             <input type="text" class="form-control" placeholder="20,40,60..." aria-describedby="basic-addon1">
@@ -331,15 +307,12 @@
   var allerClickedGroup, retourClickedGroup;
   function goToRetour(){
   document.getElementById('formulaire_aller').style.display = 'none';
-  document.getElementById('header_aller').style.display = 'none';
+  document.getElementById('nom_voyage').value = document.getElementById('input_voyage').value;
   document.getElementById('formulaire_retour').style.display = 'block';
-  document.getElementById('header_retour').style.display = 'block';
   }
   function goBackToAller(){
   document.getElementById('formulaire_retour').style.display = 'none';
-  document.getElementById('header_retour').style.display = 'none';
   document.getElementById('formulaire_aller').style.display = 'block';
-  document.getElementById('header_aller').style.display = 'block';
   }
   function submitAllerEtRetour(){
   window.location.href = "validation_bde.php";

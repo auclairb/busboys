@@ -47,7 +47,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Telecom Bus Planner</a>
+          <a class="navbar-brand" href="login.php">Telecom Bus Planner</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -61,17 +61,20 @@
 <div class="container theme-showcase" role="main">
 
 
-
       <!-- En-tête -->
       <div class="jumbotron">
-        <h1>Votre validation a bien été enregistrée !</h1>
-        <p>Vous pouvez revenir à la page d'accueil en cliquant sur la barre de navigation en haut de votre écran.</p>
+        <h1>Vos modifications ont bien été enregistrées !</h1>
+        <p>
+        Vous pouvez à nouveau créer un voyage ou réserver en utilisant le portail de réservation.
+         Pour revenir à la page d'accueil vous pouvez utiliser la barre de navigation en haut de votre écran.
+         </p>
       </div>
 
 
 
+
    <p align="center">
-        <IMG src="check.png" alt="Validation" border="0" width="500" height="500">
+        <IMG src="picture/check.png" alt="Validation" border="0" width="500" height="500">
     </p>
 <script>
 
@@ -82,5 +85,13 @@ function goToAPropos(){
 window.location.href = "a_propos.php";
 }
 </script>
+
+
+
+
+
+
+
+
 </body>
 </html>

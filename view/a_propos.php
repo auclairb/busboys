@@ -47,7 +47,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Telecom Bus Planner</a>
+          <a class="navbar-brand" href="login.php">Telecom Bus Planner</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -79,7 +79,7 @@
       éclair de génie : on peut prévoir tout cela à l'avance ! C'est le rôle de Telecom Bus Planner.</p>
 
       <h3>L'équipe</h3>
-      <p>L'équipe de développement est constituée à 100% d'élèves de l'école de tous horizons : de la Bretagne au Pays-Bas en passant par le Brésil ou encore les Hauts de Seine il y en a pour tous les goûts ! </p>
+      <p>L'équipe de développement est constituée à 100% d'élèves de l'école de tous horizons : de la Bretagne au Pays Basque en passant par le Brésil ou encore les Hauts de Seine il y en a pour tous les goûts ! </p>
 
 
 

@@ -47,7 +47,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Telecom Bus Planner</a>
+          <a class="navbar-brand" href="login.php">Telecom Bus Planner</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -63,8 +63,10 @@
       <!-- En-tête -->
       <div class="jumbotron">
         <h1>Vos modifications ont bien été enregistrées !</h1>
-        <p>Vous pouvez revenir à la page d'accueil utilisant la barre de navigation en haut de votre écran.
-        Vous pouvez à nouveau modifier votre voyage avant la date fixée par le BDE.</p>
+        <p>
+        Vous pouvez encore modifier votre réservation, jusqu'à la date limite fixée par le BDE.
+        Pour revenir à la page d'accueil vous pouvez utiliser la barre de navigation en haut de votre écran.
+        </p>
       </div>
       
 

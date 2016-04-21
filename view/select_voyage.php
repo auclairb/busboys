@@ -47,7 +47,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Telecom Bus Planner</a>
+          <a class="navbar-brand" href="login.php">Telecom Bus Planner</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -65,7 +65,7 @@
         <!-- En-tête -->
         <div class="jumbotron">
           <h1>Telecom Bus Planner</h1>
-          <p>Bienvenue sur Telecom Bus Planner. Ici tu vas pouvoir prévoir en toute sérénité tes trajets en bus pour les différents week-end organisés par ton BDE préféré. Si tu souhaites partager le voyage avec tous tes amis, n'hésite pas et connecte toi dès maintenant.</p>
+          <p>Bienvenue sur Telecom Bus Planner. Ici vous allez pouvoir prévoir en toute sérénité vos trajets en bus pour les différents week-end organisés par votre BDE préféré. Si vous souhaitez partager le voyage avec tous vos amis, n'hésitez pas et connectez-vous dès maintenant!</p>
         </div>
 
 
@@ -76,11 +76,14 @@
           <h1>Sélection du voyage</h1>
         </div>
 
+
         <div class="col-sm-6">
           <div class="alert alert-info" role="alert">
             <strong>Veuillez choisir</strong> votre voyage.
           </div>
         </div>
+
+
 
         <div class="col-sm-6">
           <form action="eleve.php" method="post">
@@ -89,7 +92,7 @@
                 <?php 
                 $Voy_i = 0;
                 foreach($voyagesDispo as $voyage){ ?>
-                <button type="button" class="list-group-item list-group-item-success" onclick = <?php echo stripcslashes("\"reserverVoyage('" . $voyage[0] . "');\""); ?> >
+                <button type="button" class="list-group-item list-group-item-info" onclick = <?php echo stripcslashes("\"reserverVoyage('" . $voyage[0] . "');\""); ?> >
                   <?php echo $voyage[0];?>
                 </button>
                 <?php  
@@ -104,11 +107,15 @@
         </form>
       </div>
     </div>
+
+
     <script type="text/javascript">
       function reserverVoyage(i){
         var get = "?NOM_V=" + i;
         window.location.href = "eleve.php" + get;
       }
     </script>
+
+
   </body>
   </html>
