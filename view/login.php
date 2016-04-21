@@ -65,7 +65,7 @@
       <!-- En-tête -->
       <div class="jumbotron">
         <h1>Telecom Bus Planner</h1>
-        <p>Bienvenue sur Telecom Bus Planner. Ici tu vas pouvoir prévoir en toute sérénité tes trajets en bus pour les différents week-end organisés par ton BDE préféré. Si tu souhaites partager le voyage avec tous tes amis, n'hésite pas et connecte toi dès maintenant.</p>
+        <p>Bienvenue sur Telecom Bus Planner. Ici vous allez pouvoir prévoir en toute sérénité vos trajets en bus pour les différents week-end organisés par votre BDE préféré. Si vous souhaitez partager le voyage avec tous vos amis, n'hésitez pas et connectez-vous dès maintenant!</p>
       </div>
 
 
@@ -106,7 +106,7 @@
 
        <div class="col-sm-6">
                   <p>
-                  <div class="alert alert-info" role="alert">
+                  <div class="alert alert-success" role="alert">
                      <strong>Vous êtes </strong> membre du BDE ? Accédez au portail BDE !
                   </div>
                   </p>

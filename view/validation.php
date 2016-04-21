@@ -64,8 +64,10 @@
       <!-- En-tête -->
       <div class="jumbotron">
         <h1>Vos modifications ont bien été enregistrées !</h1>
-        <p>Vous pouvez revenir à la page d'accueil utilisant la barre de navigation en haut de votre écran.
-        Vous pouvez à nouveau modifier votre voyage avant la date fixée par le BDE.</p>
+        <p>
+        Vous pouvez encore modifier votre réservation, jusqu'à la date limite fixée par le BDE.
+        Pour revenir à la page d'accueil vous pouvez utiliser la barre de navigation en haut de votre écran.
+        </p>
       </div>
 
 

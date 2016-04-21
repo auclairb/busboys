@@ -65,7 +65,7 @@
       <!-- En-tête -->
       <div class="jumbotron">
         <h1>Telecom Bus Planner</h1>
-        <p>Bienvenue sur Telecom Bus Planner. Ici tu vas pouvoir prévoir en toute sérénité tes trajets en bus pour les différents week-end organisés par ton BDE préféré. Si tu souhaites partager le voyage avec tous tes amis, n'hésite pas et connecte toi dès maintenant.</p>
+        <p>Bienvenue sur Telecom Bus Planner. Ici vous allez pouvoir prévoir en toute sérénité vos trajets en bus pour les différents week-end organisés par votre BDE préféré. Si vous souhaitez partager le voyage avec tous vos amis, n'hésitez pas et connectez-vous dès maintenant!</p>
       </div>
 
 
@@ -93,8 +93,8 @@
           <form action="enter_admin.php" method="post">
           <fieldset>
                     <p>
-                    <label for="LOGIN_BDE" class="sr-only">Login admin BDE</label>
-                    <input type="text" id="LOGIN_BDE" name="LOGIN_BDE" class="form-control" placeholder="Login admin BDE" required autofocus>
+                    <label for="LOGIN_BDE" class="sr-only">Login Admin BDE</label>
+                    <input type="text" id="LOGIN_BDE" name="LOGIN_BDE" class="form-control" placeholder="Login Admin BDE" required autofocus>
                     <label for="PSWD" class="sr-only">Mot de passe</label>
                     <input type="password" id="PSWD" name="PSWD" class="form-control" placeholder="Mot de passe" required>
                     </p>

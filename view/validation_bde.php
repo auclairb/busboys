@@ -64,8 +64,10 @@
       <!-- En-tête -->
       <div class="jumbotron">
         <h1>Vos modifications ont bien été enregistrées !</h1>
-        <p>Vous pouvez revenir à la page d'accueil utilisant la barre de navigation en haut de votre écran.
-        Vous pouvez à nouveau créer un voyage ou réserver en utilisant le portail de réservation. </p>
+        <p>
+        Vous pouvez à nouveau créer un voyage ou réserver en utilisant le portail de réservation.
+         Pour revenir à la page d'accueil vous pouvez utiliser la barre de navigation en haut de votre écran.
+         </p>
       </div>
 
 

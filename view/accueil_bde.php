@@ -68,8 +68,12 @@
         <h1>
           Bienvenue <?php echo $prenom_getted . " !"; ?>
         </h1>
+        <p>Comme vous êtes un membre habilité du BDE vous pouvez ici réserver vos places et gérer tous les voyages.</p>
 
       </div>
+
+
+
       <div class="page-header">
         <h1>Que voulez-vous faire ?</h1>
       </div>
