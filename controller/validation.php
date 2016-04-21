@@ -1,3 +1,3 @@
 <?php
-session_start();
-header('Location: ../view/validation.php');
+//session_start();
+include '../view/validation.php';

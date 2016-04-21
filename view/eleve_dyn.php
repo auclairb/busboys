@@ -385,7 +385,7 @@
 			document.getElementById('formulaire_aller').style.display = 'block';
 		}
 		function submitAllerEtRetour(){
-			window.location.href = "validation.php";
+			window.location.href = "../controller/validation.php";
 		}
 		
 		function allerHideAllMembers(){

@@ -60,16 +60,15 @@
 
 <div class="container theme-showcase" role="main">
 
-
       <!-- En-tête -->
       <div class="jumbotron">
         <h1>Vos modifications ont bien été enregistrées !</h1>
         <p>Vous pouvez revenir à la page d'accueil utilisant la barre de navigation en haut de votre écran.
         Vous pouvez à nouveau modifier votre voyage avant la date fixée par le BDE.</p>
       </div>
-
-
+      
 
    <p align="center">
         <IMG src="picture/check.png" alt="Validation" border="0" width="500" height="500">
     </p>
+    </IMG></p></div></body></html>
