@@ -1,11 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-        <title>BUS Planner-Session élève</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>BUS PLANNER</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="main.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
 
@@ -30,27 +58,31 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
+
     <div class="container theme-showcase" role="main">
 
 
-        <div class="container-fluid" style="text-align:center">
-                <h1>BUS Planner-Session élève</h1>
-        </div>
+      <!-- En-tête -->
+      <div class="jumbotron">
+        <h1>Bienvenue <?php echo $prenom_getted . " !"; ?></h1>
+        <p>Ici vous allez pouvoir organiser vos voyages. Vous pouvez apporter des modification à vos réservations jusqu'à la date fixée par le BDE.</p>
+      </div>
+
+
 
         <!-- Formulaire ALLER -->
         <div class="container-fluid" id="formulaire_aller">
-                <div class="row">
-                        <div class="col-md-12" style="text-align:center">
-                                <h2>
-                                        Voyage <strong> <?php echo $voyage; ?> aller</strong> de <?php echo $prenom_getted . " " . $nom_getted; ?>
-                                </h2>
-                        </div>
-                </div>
 
-                <div class="row">
-                        <div class="col-md-12">
-                                <div class="col-md-3 col-md-offset-2">
-                                        <div class="panel panel-success">
+
+
+      <!-- Page de connexion -->
+      <div class="page-header">
+        <h1>Voyage <strong> <?php echo $voyage; ?> aller</strong> de <?php echo $prenom_getted . " " . $nom_getted; ?></h1>
+      </div>
+
+
+                                <div class="col-sm-4">
+                                        <div class="panel panel-info">
                                                 <div class="panel-heading">
                                                         Mes groupes
                                                         <button type="button" class="close" data-toggle="modal" data-target="#myModal">
@@ -58,7 +90,7 @@
                                                         </button>
                                                 </div>
                                                 <div class = "panel-body" style="background-color: #f0f0f5">
-                                                        Choisis le groupe d'amis avec lesquels tu veux faire l'<strong>aller :</strong>
+                                                        Avec quel groupe d'amis voulez-vous passer l'aller :
                                                 </div>
 
                                                 <div class="list-group">
@@ -83,13 +115,13 @@
                                         </div>
                                 </div>
 
-                                <div class="col-md-3">
-                                        <div class ="panel panel-success">
+                                <div class="col-sm-4">
+                                        <div class ="panel panel-info">
                                                 <div class ="panel-heading">
                                                         Participants du groupe
                                                 </div>
                                                 <div class = "panel-body" style="background-color: #f0f0f5">
-                                                        Les personnes avec qui tu seras pour le bus :
+                                                        Vos compagnons de voyage :
                                                 </div>
 
                                                 <?php
@@ -114,78 +146,84 @@
                                         </div>
                                 </div>
 
-                        <div class="col-md-2">
-                                <div class="panel panel-success">
-                                        <div class="panel-heading">
-                                                Options:
-                                        </div>
+                                        <div class="col-sm-4">
+                                                <div class="panel panel-info">
+                                                        <div class="panel-heading">
+                                                                Options:
+                                                        </div>
 
-                                        <div class="panel-body">
+                                                        <div class="panel-body">
 
-                                                <div class="row">
-                                                        <div class="col-md-12">
-                                                                Répartition:
+                                                                <div class="row">
+                                                                        <div class="col-md-12">
+                                                                                Répartition:
+                                                                        </div>
+                                                                </div>
+                                                                <div class="radio">
+                                                                        <label>
+                                                                                <input type="radio"> Ligne
+                                                                        </label>
+                                                                </div>
+
+                                                                <div class="radio">
+                                                                        <label><input type="radio"> Bloc</label>
+                                                                </div>
+
+                                                                <div class="row">
+                                                                        <div class="col-md-12">
+                                                                                Placement dans le bus:
+                                                                        </div>
+                                                                </div>
+
+                                                                <div class="radio">
+                                                                        <label>
+                                                                                <input type="radio"> A l'avant
+                                                                        </label>
+                                                                </div>
+
+                                                                <div class="radio">
+                                                                        <label><input type="radio"> Au milieu
+                                                                        </label>
+                                                                </div>
+
+                                                                <div class="radio">
+                                                                        <label><input type="radio"> A l'arrière
+                                                                        </label>
+                                                                </div>
                                                         </div>
                                                 </div>
-                                                <div class="radio">
-                                                        <label>
-                                                                <input type="radio"> Ligne
-                                                        </label>
-                                                </div>
-
-                                                <div class="radio">
-                                                        <label><input type="radio"> Bloc</label>
-                                                </div>
-
-                                                <div class="row">
-                                                        <div class="col-md-12">
-                                                                Placement dans le bus:
-                                                        </div>
-                                                </div>
-
-                                                <div class="radio">
-                                                        <label>
-                                                                <input type="radio"> A l'avant
-                                                        </label>
-                                                </div>
-
-                                                <div class="radio">
-                                                        <label><input type="radio"> Au milieu
-                                                        </label>
-                                                </div>
-
-                                                <div class="radio">
-                                                        <label><input type="radio"> A l'arrière
-                                                        </label>
-                                                </div>
+                                                 <button class="btn btn-lg btn-success btn-block" type="submit" onclick="javascript:goToRetour();">Suivant</button>
                                         </div>
-                                </div>
-                        </div>
 
-                </div>
+        </div>
 
-                <div class="row">
-                        <div class="col-md-1 col-md-offset-9">
-                                <button type="button" class="btn btn-success" onclick="javascript:goToRetour();">Suivant</button>
-                        </div>
-                </div>
-        </div>
-        </div>
+
+
+
+
+
+
+
+
         <!-- Fin du formulaire ALLER -->
+
+
+
+
+
+
+
+
 
         <!-- Formulaire RETOUR -->
         <div class="container-fluid" id="formulaire_retour" style="display:none">
-                <div class="row">
-                        <div class="col-md-12" style="text-align:center">
-                                <h2>
-                                        Voyage <strong>retour</strong> de <?php echo $prenom_getted . " " . $nom_getted; ?>
-                                </h2>
-                        </div>
-                </div>
 
-                <div class="row">
-                        <div class="col-md-12">
-                                <div class="col-md-3 col-md-offset-2">
+          <div class="page-header">
+            <h1>Voyage <strong> <?php echo $voyage; ?> retour</strong> de <?php echo $prenom_getted . " " . $nom_getted; ?></h1>
+          </div>
+
+
+                                <div class="col-sm-4">
                                         <div class="panel panel-info">
                                                 <div class="panel-heading">
                                                         Mes groupes:
@@ -194,7 +232,7 @@
                                                         </button>
                                                 </div>
                                                 <div class = "panel-body" style="background-color: #f0f0f5">
-                                                        Choisis le groupe d'amis avec lesquels tu veux faire le <strong>retour :</strong>
+                                                        Avec quel groupe d'amis voulez-vous passer le retour :
                                                 </div>
 
                                                 <div class="list-group">
@@ -220,13 +258,13 @@
                                         </div>
                                 </div>
 
-                                <div class="col-md-3">
+                                <div class="col-sm-4">
                                         <div class ="panel panel-info">
                                                 <div class ="panel-heading">
                                                         Participants du groupe
                                                 </div>
                                                 <div class = "panel-body" style="background-color: #f0f0f5">
-                                                Les personnes avec qui tu seras pour le bus :
+                                                Vos compagnons de voyage :
                                                 </div>
 
                                                 <?php
@@ -251,7 +289,7 @@
                                         </div>
                                 </div>
 
-                        <div class="col-md-2">
+                        <div class="col-sm-4">
                                 <div class="panel panel-info">
                                         <div class="panel-heading">
                                                 Options:
@@ -297,21 +335,22 @@
                                                 </div>
                                         </div>
                                 </div>
+                                <button class="btn btn-lg btn-warning btn-block" type="submit" onclick="javascript:goBackToAller();">Retour</button>
+                                <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="javascript:submitAllerEtRetour();">Soumettre</button>
                         </div>
 
-                </div>
 
-                <div class="row">
-                        <div class="col-md-1 col-md-offset-8">
-                                <button type="button" class="btn btn-warning" onclick="javascript:goBackToAller();">Retour</button>
-                        </div>
-                        <div class="col-md-1">
-                                <button type="button" class="btn btn-primary" onclick="javascript:submitAllerEtRetour();">Soumettre</button>
-                        </div>
                 </div>
+        </div>
         </div>
         </div>
         <!-- Fin du formulaire RETOUR -->
+
+
+
+
+
+
 
 
 
