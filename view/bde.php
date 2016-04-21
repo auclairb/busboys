@@ -89,16 +89,16 @@
   						</div>
 
   						<div class="input-group input-group-lg">
-  							<span class="input-group-addon" id="basic-addon1">Nom du voyage:</span>
-  							<input type="text" id="input_voyage" class="form-control" placeholder="WEI, WEE, WEFA..." aria-describedby="basic-addon1">
+  							<span class="input-group-addon" id="basic-addon1" style="width:60%">Nom du voyage:</span>
+  							<input type="text" id="input_voyage" class="form-control" placeholder="WEI, WEE, WEFA..." aria-describedby="basic-addon1" style="width:100%">
   						</div>
   						<div class="input-group input-group-lg">
-  							<span class="input-group-addon">Date d'ouverture de réservation:</span>
-  							<input type="date" id="input_ouverture" class="form-control" aria-describedby="basic-addon1" placeholder="10/04/2010...">
+  							<span class="input-group-addon" style="width:60%">Date d'ouverture de réservation:</span>
+  							<input type="date" id="input_ouverture" class="form-control" aria-describedby="basic-addon1" placeholder="10/04/2017..." style="width:100%">
   						</div>
   						<div class="input-group input-group-lg">
-  							<span class="input-group-addon">Date de fermeture de réservation:</span>
-  							<input type="date" id="input_fermeture" class="form-control" aria-describedby="basic-addon1" placeholder="15/04/2010...">
+  							<span class="input-group-addon" style="width:60%">Date de fermeture de réservation:</span>
+  							<input type="date" id="input_fermeture" class="form-control" aria-describedby="basic-addon1" placeholder="15/04/2017..." style="width:100%">
   						</div>
   						<br>
 
@@ -167,16 +167,16 @@
   						</div>
 
   						<div class="input-group input-group-lg">
-  							<span class="input-group-addon">Nom du voyage:</span>
-  							<input type="text" id="nom_voyage" class="form-control" aria-describedby="basic-addon1" disabled="true">
+  							<span class="input-group-addon" style="width:60%">Nom du voyage:</span>
+  							<input type="text" id="nom_voyage" class="form-control" aria-describedby="basic-addon1" disabled="true" style="width:100%">
   						</div>
   						<div class="input-group input-group-lg">
-  							<span class="input-group-addon">Date d'ouverture de réservation:</span>
-  							<input type="text" id="date_ouverture" class="form-control" aria-describedby="basic-addon1" disabled="true">
+  							<span class="input-group-addon" style="width:60%">Date d'ouverture de réservation:</span>
+  							<input type="text" id="date_ouverture" class="form-control" aria-describedby="basic-addon1" disabled="true" style="width:100%">
   						</div>
   						<div class="input-group input-group-lg">
-  							<span class="input-group-addon">Date de fermeture de réservation:</span>
-  							<input type="text" id="date_fermeture" class="form-control" aria-describedby="basic-addon1" disabled="true">
+  							<span class="input-group-addon" style="width:60%">Date de fermeture de réservation:</span>
+  							<input type="text" id="date_fermeture" class="form-control" aria-describedby="basic-addon1" disabled="true" style="width:100%">
   						</div>
   						<br>
   					</div>
