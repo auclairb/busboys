@@ -51,7 +51,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="login.php">Accueil</a></li>
+            <li><a href="accueil_bde.php">Accueil</a></li>
             <li><a href="a_propos.php">A propos</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -68,6 +68,10 @@
         Vous pouvez à nouveau créer un voyage ou réserver en utilisant le portail de réservation.
          Pour revenir à la page d'accueil vous pouvez utiliser la barre de navigation en haut de votre écran.
          </p>
+
+                 <div style="text-align:center">
+        <button type="button" class="btn btn-lg btn-primary" onclick="window.location.href ='accueil_bde.php';"> Retour à ma page admin </button>
+        </div>
       </div>
 
 

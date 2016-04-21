@@ -51,7 +51,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="login.php">Accueil</a></li>
+            <li><a href="select_voyage.php">Accueil</a></li>
             <li><a href="a_propos.php">A propos</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -67,6 +67,9 @@
         Vous pouvez encore modifier votre réservation, jusqu'à la date limite fixée par le BDE.
         Pour revenir à la page d'accueil vous pouvez utiliser la barre de navigation en haut de votre écran.
         </p>
+        <div style="text-align:center">
+        <button type="button" class="btn btn-lg btn-primary" onclick="window.location.href ='select_voyage.php';"> Retour à mes voyages </button>
+        </div>
       </div>
       
 
