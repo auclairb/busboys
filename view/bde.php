@@ -65,49 +65,45 @@
         <div class="container theme-showcase" role="main">
 
 
-<div class="container-fluid" style="text-align:center">
-		<h1>BUS Planner-Session BDE</h1>
-	</div>
+      <!-- En-tête -->
+      <div class="jumbotron">
+        <h1>Bienvenue <?php echo $prenom_getted . " !"; ?></h1>
+        <p>Ici vous allez pouvoir gérer les voyages en tant que membre organisateur du BDE. N'oubliez pas de faire vos réservations en tant qu'élève lambda par la suite ...</p>
+      </div>
 
-	<div class="row">
-	<div id="header_aller">
-	    <div class="col-md-12" style="text-align:center">
-	      <h2>
-			Bienvenue admin <strong><?php echo $prenom_getted . " " . $nom_getted; ?> </strong> !
-			</br>
-			</h2>
-			Entrée des données pour le voyage <strong> ALLER </strong>
-			
-	    </div>
-	  </div>
-	</div>
 
-	<div class="row">
-	<div id="header_retour" style="display:none">
-	    <div class="col-md-12" style="text-align:center">
-	      <h2>
-			Bienvenue admin <strong><?php echo $prenom_getted . " " . $nom_getted; ?> </strong> !
-			</br>
-		</h2>
-			Entrée des données pour le voyage <strong> RETOUR </strong>
-	      
-	    </div>
-	  </div>
-	</div>
-	
-	<div class="row">
-	  <p>
-	      <div class="input-group col-md-4 col-md-offset-4">
-		<span class="input-group-addon" id="basic-addon1">Nom du voyage:</span>
-		<input type="text" class="form-control" placeholder="WEI, WEE, WEFA..." aria-describedby="basic-addon1">
-	      </div>
-	    </div>
-	  </p>
 
-	<!-- Formulaire ALLER -->
-	<div class="container-fluid" id="formulaire_aller">
-		<div class="row">
-			<div class="col-md-4 col-md-offset-4"> 
+<div class="container-fluid" id="formulaire_aller">
+
+<!-- Formulaire ALLER -->
+
+
+
+      <div class="page-header">
+        <h1>Création d'un voyage - étape 1 : l'aller</h1>
+      </div>
+
+        <div class="container theme-showcase" role="main">
+
+
+                <div class="col-sm-6">
+                        <div class="alert alert-success" role="alert">
+                         Commencez par nommer votre voyage !
+                        </div>
+
+                        <div class="input-group input-group-lg">
+                        <span class="input-group-addon" id="basic-addon1">Nom du voyage:</span>
+                        <input type="text" class="form-control" placeholder="WEI, WEE, WEFA..." aria-describedby="basic-addon1">
+                        </div>
+
+                        <br>
+
+                </div>
+
+
+
+
+                        <div class="col-sm-6">
 					<div class="panel panel-success">
 						<div class="panel-heading">
 							Bus pour ce voyage
@@ -128,21 +124,26 @@
 								<button type="button" class="btn btn-danger" onclick="javascript:supprimerGroupe(allerClickedGroup)">Supprimer</button>
 							</div>
 						</div>
-					</div>
+                                        </div>
+                        <div>
+                                <button class="btn btn-lg btn-success btn-block" type="submit" onclick="javascript:goToRetour();">VALIDER</button>
+                        </div>
 			</div>
-
-		</div>
-
-		<div class="row"> 
-			<div class="col-md-1 col-md-offset-9"> 
-				<button type="button" class="btn btn-success" onclick="javascript:goToRetour();">Suivant</button>
-			</div>
-		</div>
 	</div>
+        </div>
 	<!-- Fin du formulaire ALLER -->
+        </div>
+
+
+
+
+
+
 
 	<!-- Formulaire RETOUR -->
-	<div class="container-fluid" id="formulaire_retour" style="display:none">
+
+
+        <div class="container-fluid" id="formulaire_retour" style="display:none">
 		<div class="row">
 			<div class="col-md-4 col-md-offset-4"> 
 					<div class="panel panel-success">
@@ -180,6 +181,15 @@
 		</div>
 	</div>
 	<!-- Fin du formulaire RETOUR -->
+
+
+
+
+
+
+
+
+
 
 
 
