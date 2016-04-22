@@ -81,7 +81,7 @@
       </div>
 
      <div class="col-sm-6">
-        <form action="enter_admin.php" method="post">
+        <form action="enter_bde.php" method="post">
           <fieldset>
             <p>
             <label for="LOGIN_BDE" class="sr-only">Login Admin BDE</label>

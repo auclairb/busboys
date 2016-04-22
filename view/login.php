@@ -102,7 +102,7 @@
         </p>
 
         <p>
-          <button class="btn btn-lg btn-success btn-block" type="submit" onclick="window.location.href ='login_admin.php';">PORTAIL BDE</button>
+          <button class="btn btn-lg btn-success btn-block" type="submit" onclick="window.location.href ='login_bde.php';">PORTAIL BDE</button>
         </p>
       </div>
     </div>

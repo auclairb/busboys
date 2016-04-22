@@ -1,0 +1,49 @@
+#######    #    #    ######  	#######    ######  #	#    ###### 
+#	   #   #    #   # 			#	   #   #    #  #	# 	#
+#     #    #    #   # 			#     #    #    #  #	# 	#
+#######    #    #    ##### 	    #######    #    #  ######	 #####
+#      #   #    #         # 	#      #   #    #       # 		  #
+#	    #  #    #         # 	#	    #  #    #       #	  	  #
+#       #  #    #         # 	#       #  #    #       #	  	  #
+########   ######   ###### 		########   ######  		#	######
+
+Benjamin AUCLAIR
+Bernardo CARDOSO CORDEIRO
+Martin CHOCHOD
+Augustin MOREL
+
+**** Readme ****
+
+Bienvenue dans le projet des BusBoys : le Telecom Bus Planner.
+Ce Readme est conçu afin de vous aider à comprendre son fonctionnement détaillé.
+
+Tout d'abord, nous avons implémenté notre projet selon une architecture MVC et 
+avec une base de données SQL (projet_igr.sql, présent dans le dossier).
+Il y a donc 3 dossiers :
+- controller
+- model
+- view
+
+On retrouve exactement la même liste de fichiers d'un répertoire à un autre, 
+car en effet ceux-ci sont liés, selon la logique du modèle MVC.
+
+*********************************************************************************
+IMPORTANT : afin de lancer le projet, vous devrez tout d'abord importer la base
+de données en créant une base de données nommé projet_igr, puis en cliquant sur 
+importer ( on a pris ici l'exemple de phpMyAdmin).
+**********************************************************************************
+
+On trouve ainsi le cheminement de pages web suivant :
+
+			 --- enter.php --- select_voyage.php --- eleve.php --- validation.php 
+login.php ---|
+			 --- login_bde.php (etc.)
+
+et
+													   --- bde.php
+login_bde.php --- enter_bde.php --- accueil_bde.php --| 
+													   --- select_voyage.php --- eleve.php (etc.)
+
+
+Les pages enter.php et enter_bde.php ne sont que des formulaires de contrôle 
+de l'identification, et n'affichent donc rien car la redirection est immédiate.
