@@ -45,9 +45,9 @@ login.php ---|
 			 --- login_bde.php (etc.)
 
 et
-													   --- bde.php
-login_bde.php --- enter_bde.php --- accueil_bde.php --| 
-													   --- select_voyage.php --- eleve.php (etc.)
+													 -- bde.php
+login_bde.php -- enter_bde.php -- accueil_bde.php --| 
+													 -- select_voyage.php -- eleve.php
 
 
 Les pages enter.php et enter_bde.php ne sont que des formulaires de contrôle 
@@ -85,5 +85,16 @@ Ces actions sont pour l'instant hardcodées afin de donner un aperçu de l'inter
 que nous avons pensée pour le projet, après définition des besoins utilisateurs, et 
 des actions qui vont être effectuées sur le Telecom Bus Planner.
 
+*** NB ***
+Nous aimerions souligner le fait que ce sujet nous a particulièrement intéressé, 
+car sa problématique nous a concerné tout particulièrement et nous avons dès lors 
+souhaité trouver une solution durable à ce problème. Dans cette optique, et dans 
+la mesure de notre disponibilité, nous allons tenter de terminer la partie 
+back-end du projet afin de pouvoir proposer la solution au BDE.
+
+En effet, lors de démonstrations d'évaluation à nos amis BDE, nous avons eu de 
+nombreuses réaction très positives de leur part "Mais c'est génial on le veut !"
 
 
+En vous souhaitant bon test et bonne relecture du code (qui a été réindenté
+pour une lecture agréable).
