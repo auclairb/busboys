@@ -12,11 +12,12 @@ Bernardo CARDOSO CORDEIRO
 Martin CHOCHOD
 Augustin MOREL
 
-**** Readme ****
+****** README *******
 
 Bienvenue dans le projet des BusBoys : le Telecom Bus Planner.
 Ce Readme est conçu afin de vous aider à comprendre son fonctionnement détaillé.
 
+*** STRUCTURE ***
 Tout d'abord, nous avons implémenté notre projet selon une architecture MVC et 
 avec une base de données SQL (projet_igr.sql, présent dans le dossier).
 Il y a donc 3 dossiers :
@@ -31,8 +32,12 @@ car en effet ceux-ci sont liés, selon la logique du modèle MVC.
 IMPORTANT : afin de lancer le projet, vous devrez tout d'abord importer la base
 de données en créant une base de données nommé projet_igr, puis en cliquant sur 
 importer ( on a pris ici l'exemple de phpMyAdmin).
+Le projet étant écrit en php, vous devez également disposer d'un outil comme LAMP,
+XAMP ou WAMP (pour Windows) afin de l'exécuter.
 **********************************************************************************
 
+
+*** CHEMINEMENT ***
 On trouve ainsi le cheminement de pages web suivant :
 
 			 --- enter.php --- select_voyage.php --- eleve.php --- validation.php 
@@ -47,3 +52,38 @@ login_bde.php --- enter_bde.php --- accueil_bde.php --|
 
 Les pages enter.php et enter_bde.php ne sont que des formulaires de contrôle 
 de l'identification, et n'affichent donc rien car la redirection est immédiate.
+
+*** UTILISATION ***
+Vous pouvez vous identifier avec tous les identifiants de la base de données, comme :
+- mchochod : 1234
+- bauclair : 1234
+- elc : 1234
+etc...
+
+Vous pourrez apprécier l'affichage personnalisé du nom, des groupes de la personne
+identifiée.
+
+Nous avons en effet essayé d'implémenter le plus possible la partie back-end de notre
+ interface afin de rendre l'expérience utilisateur très agréable et au plus proche de
+ la version définitive.
+
+Il est donc possible de récupérer toutes les données d'une personne en se connectant,
+mais il n'est pas encore possible d'effectuer des modifications de la base de données :
+- ajout d'un nouveau groupe
+- suppression d'un groupe
+- soumission d'une réservation de groupe
+
+ne sont pas implémentés pour l'instant en back-end pour la partie ETUDIANT
+
+- création d'un voyage
+- enregistrement du nouveau voyage
+
+ne sont également pas implémentés pour la partie BDE/ADMIN
+
+
+Ces actions sont pour l'instant hardcodées afin de donner un aperçu de l'interface
+que nous avons pensée pour le projet, après définition des besoins utilisateurs, et 
+des actions qui vont être effectuées sur le Telecom Bus Planner.
+
+
+
