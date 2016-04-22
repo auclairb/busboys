@@ -12,18 +12,18 @@
     <title>BUS PLANNER</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../view/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap theme -->
-    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../view/css/bootstrap-theme.min.css" rel="stylesheet">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../view/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="main.css" rel="stylesheet">
+    <link href="../view/css/main.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="js/ie-emulation-modes-warning.js"></script>
+    <script src="../view/js/ie-emulation-modes-warning.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -33,10 +33,6 @@
   </head>
 
   <body role="document">
-
-
-
-
     <!-- Barre de navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -59,22 +55,16 @@
     </nav>
 
     <div class="container theme-showcase" role="main">
-
-
-
       <!-- En-tête -->
       <div class="jumbotron">
         <h1>Telecom Bus Planner</h1>
         <p>Bienvenue sur Telecom Bus Planner. Ici vous allez pouvoir prévoir en toute sérénité vos trajets en bus pour les différents week-end organisés par votre BDE préféré. Si vous souhaitez partager le voyage avec tous vos amis, n'hésitez pas et connectez-vous dès maintenant!</p>
       </div>
 
-
-
       <!-- Page de connexion -->
       <div class="page-header">
         <h1>Connexion</h1>
       </div>
-
       <div class="col-sm-6">
         <p>
           <?php if (ISSET($_GET['login_failure'])){?>
@@ -104,18 +94,17 @@
         </form>
       </div>
 
-       <div class="col-sm-6">
-                  <p>
-                  <div class="alert alert-success" role="alert">
-                     <strong>Vous êtes </strong> membre du BDE ? Accédez au portail BDE !
-                  </div>
-                  </p>
+     <div class="col-sm-6">
+        <p>
+          <div class="alert alert-success" role="alert">
+           <strong>Vous êtes </strong> membre du BDE ? Accédez au portail BDE !
+          </div>
+        </p>
 
-                  <p>
-                  <button class="btn btn-lg btn-success btn-block" type="submit" onclick="window.location.href ='login_admin.php';">PORTAIL BDE</button>
-                  </p>
-        </div>
+        <p>
+          <button class="btn btn-lg btn-success btn-block" type="submit" onclick="window.location.href ='login_admin.php';">PORTAIL BDE</button>
+        </p>
       </div>
-    </body>
-  </html>
-
+    </div>
+  </body>
+</html>

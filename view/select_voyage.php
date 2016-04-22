@@ -1,42 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="icon" href="../../favicon.ico">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
 
-  <title>BUS PLANNER</title>
+    <title>BUS PLANNER</title>
 
-  <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap theme -->
-  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="../view/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="../view/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../view/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
-  <!-- Custom styles for this template -->
-  <link href="main.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="../view/css/main.css" rel="stylesheet">
 
-  <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-  <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-  <script src="js/ie-emulation-modes-warning.js"></script>
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../view/js/ie-emulation-modes-warning.js"></script>
 
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-      <![endif]-->
-    </head>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+      <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+  </head>
 
-    <body role="document">
-
-
-
-
+  <body role="document">
     <!-- Barre de navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -58,49 +54,39 @@
       </div>
     </nav>
 
-<div class="container theme-showcase" role="main">
+    <div class="container theme-showcase" role="main">
+      <!-- En-tête -->
+      <div class="jumbotron">
+        <h1>Telecom Bus Planner</h1>
+        <p>Bienvenue sur Telecom Bus Planner. Ici vous allez pouvoir prévoir en toute sérénité vos trajets en bus pour les différents week-end organisés par votre BDE préféré. Si vous souhaitez partager le voyage avec tous vos amis, n'hésitez pas et connectez-vous dès maintenant!</p>
+      </div>
 
+      <!-- Choix du voyage -->
+      <div class="page-header">
+        <h1>Sélection du voyage</h1>
+      </div>
 
-
-        <!-- En-tête -->
-        <div class="jumbotron">
-          <h1>Telecom Bus Planner</h1>
-          <p>Bienvenue sur Telecom Bus Planner. Ici vous allez pouvoir prévoir en toute sérénité vos trajets en bus pour les différents week-end organisés par votre BDE préféré. Si vous souhaitez partager le voyage avec tous vos amis, n'hésitez pas et connectez-vous dès maintenant!</p>
+      <div class="col-sm-6">
+        <div class="alert alert-info" role="alert">
+          <strong>Veuillez choisir</strong> votre voyage.
         </div>
+      </div>
 
-
-
-        <!-- Choix du voyage -->
-
-        <div class="page-header">
-          <h1>Sélection du voyage</h1>
-        </div>
-
-
-        <div class="col-sm-6">
-          <div class="alert alert-info" role="alert">
-            <strong>Veuillez choisir</strong> votre voyage.
-          </div>
-        </div>
-
-
-
-        <div class="col-sm-6">
-          <form action="eleve.php" method="post">
-            <fieldset>
-              <div class="form-group">
-                <?php 
-                $Voy_i = 0;
-                foreach($voyagesDispo as $voyage){ ?>
-                <button type="button" class="list-group-item list-group-item-info" onclick = <?php echo stripcslashes("\"reserverVoyage('" . $voyage[0] . "');\""); ?> >
-                  <?php echo $voyage[0];?>
-                </button>
-                <?php  
-                $Voy_i +=1 ;
-              } ?>
-
+      <div class="col-sm-6">
+        <form action="eleve.php" method="post">
+          <fieldset>
+            <div class="form-group">
+              <?php 
+              $Voy_i = 0;
+              foreach($voyagesDispo as $voyage){ ?>
+              <button type="button" class="list-group-item list-group-item-info" onclick = <?php echo stripcslashes("\"reserverVoyage('" . $voyage[0] . "');\""); ?> >
+                <?php echo $voyage[0];?>
+              </button>
+              <?php  
+              $Voy_i +=1 ;
+            } ?>
               <button type="button" class="list-group-item list-group-item-disabled">
-                Voyage à venir ...
+              Voyage à venir ...
               </button>
             </div>
           </fieldset>
@@ -108,14 +94,11 @@
       </div>
     </div>
 
-
     <script type="text/javascript">
       function reserverVoyage(i){
         var get = "?NOM_V=" + i;
         window.location.href = "eleve.php" + get;
       }
     </script>
-
-
   </body>
-  </html>
+</html>

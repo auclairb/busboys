@@ -12,18 +12,18 @@
     <title>BUS PLANNER: Accueil BDE</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../view/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap theme -->
-    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../view/css/bootstrap-theme.min.css" rel="stylesheet">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../view/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="main.css" rel="stylesheet">
+    <link href="../view/css/main.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="js/ie-emulation-modes-warning.js"></script>
+    <script src="../view/js/ie-emulation-modes-warning.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -33,10 +33,6 @@
   </head>
 
   <body role="document">
-
-
-
-
     <!-- Barre de navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -58,52 +54,45 @@
       </div>
     </nav>
 
-    <div class="container theme-showcase" role="main">
-
-
 
     <div class="container theme-showcase" role="main">
       <div class="jumbotron">
-
         <h1>
           Bienvenue <?php echo $prenom_getted . " !"; ?>
         </h1>
         <p>Comme vous êtes un membre habilité du BDE vous pouvez ici réserver vos places et gérer tous les voyages.</p>
-
       </div>
-
-
 
       <div class="page-header">
         <h1>Que voulez-vous faire ?</h1>
       </div>
+
       <div class="col-md-6">
-	<div class="alert alert-info" role="alert">
-	  <strong>Réservez</strong> vos places pour un futur voyage ?
-	</div>
+      	<div class="alert alert-info" role="alert">
+          <strong>Réservez</strong> vos places pour un futur voyage ?
+        </div>
         <button class="btn btn-lg btn-primary btn-block" type="button" onclick="goToEleve()">RESERVER</button>
       </div>
       <div class="col-md-6">
         <div class="alert alert-success" role="alert">
           <strong>Créer</strong> un nouveau voyage ?
-	</div>
+        </div>
         <button class="btn btn-lg btn-success btn-block" type="button" data-toggle="modal" data-target="#myModal" onclick="goToBDE()" >CREER UN VOYAGE</button>
       </div>
     </div>
-</nav>
 
-<script>
-  function goToBDE(){
-  window.location.href = "bde.php";
-  }
-  function goToEleve(){
-  window.location.href = "select_voyage.php";
-  }
-  function goToAPropos(){
-  window.location.href = "a_propos.php";
-  }
-</script>
 
+    <script>
+      function goToBDE(){
+      window.location.href = "bde.php";
+      }
+      function goToEleve(){
+      window.location.href = "select_voyage.php";
+      }
+      function goToAPropos(){
+      window.location.href = "a_propos.php";
+      }
+    </script>
   </body>
-
 </html>
+

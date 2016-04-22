@@ -64,5 +64,5 @@ $liste_eleves = getListeEleves($bdd);
 
 
 // ****** PARTIE A CONSERVER TOUJOURS
-include '../view/eleve_dyn.php';
+include '../view/eleve.php';
 ?>
