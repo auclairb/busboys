@@ -3,7 +3,7 @@ session_start();
 
 include '../model/eleve.php';
 
-// ******* IMPORTANT : décommenter cette section et commenter tout le reste jusque l'avant -dernière ligne pour vous ***********
+// ******* IMPORTANT : décommenter cette section si vous n'avez pas la base de données. Permet la simulation ***********
 // ********** DEBUT SECTION A DECOMMENTER *******************************
 /*
 $nom_getted = "Chochod";
