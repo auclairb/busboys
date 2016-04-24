@@ -44,6 +44,9 @@ appartiennent
 identifiants (uniques) vers la table liste_bde de leurs membres.
 NB : l'utilisation des ID et non des noms permet de résoudre les cas des
 homonymes.
+A l'heure actuelle, une erreur inconnue fait que les groupes pour les personnes 
+d'ID > 10 sont les leurs + ceux de la personne d'ID 1 (un problème dans la comparaison
+des valeurs string au lieu de int sans doute).
 
 -  une table voyages_dispo : elle contient la liste des voyages et leur disponibilité
 à la réservation des places dans le bus.
