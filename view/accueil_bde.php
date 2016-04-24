@@ -75,8 +75,14 @@
       </div>
       <div class="col-md-6">
         <div class="alert alert-success" role="alert">
-          <strong>Créer</strong> un nouveau voyage ?
+          <strong>Créer ou gérer</strong> un voyage ?
         </div>
+	<div class="panel panel-default">
+	  <div class="panel-heading">Liste des voyages en cours</div>
+	  <div class="panel-body">
+	    WEI <button class="btn glyphicon glyphicon-pencil" style="float:right"></button>
+	  </div>
+	</div> 
         <button class="btn btn-lg btn-success btn-block" type="button" data-toggle="modal" data-target="#myModal" onclick="goToBDE()" >CREER UN VOYAGE</button>
       </div>
     </div>
