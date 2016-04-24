@@ -25,8 +25,10 @@ Il comporte les sections suivante :
 ****************************** BASE DE DONNEES ********************************
 
 IMPORTANT : afin de lancer le projet, vous devrez tout d'abord importer la base
-de données en créant une base de données nommé projet_igr, puis en cliquant sur 
-importer ( avec par exemple phpMyAdmin).
+de données projet_igr.sql (présente dans le dossier du projet) en créant une 
+base de données nommé projet_igr, puis en cliquant sur importer ( avec par exemple 
+phpMyAdmin).
+
 Le projet étant écrit en php, vous devez également disposer d'un outil comme LAMP,
 XAMP ou WAMP (pour Windows) afin de l'exécuter.
 
@@ -46,8 +48,19 @@ homonymes.
 -  une table voyages_dispo : elle contient la liste des voyages et leur disponibilité
 à la réservation des places dans le bus.
 
-- une table wei : cette table serait générée automatiquement dès l'ouverture des 
-réservations pour un voyage. 
+Tables "exemples"
+- la table wei : cette table serait générée automatiquement dès l'ouverture des 
+réservations pour un voyage et contiendrait toutes les réservations des groupes
+ainsi que leurs préférences.
+
+- la table inscrits_wei : cette table va de pair avec la précédente et est 
+l'équivalent d'une pile de vérification. Elle contient initialement la liste de 
+toutes les personnes inscrites au voyage (le WEI ici), et se vide des étudiants
+qui ont fait leur réservation. Elle permet d'éviter des réservations en doublon.
+
+Il y aurait donc pour chaque voyage une table "nom_du_voyage" et une table
+"inscrits_nom_du_voyage".
+
 
 
 *********************************** STRUCTURE **********************************
@@ -68,12 +81,13 @@ car en effet ceux-ci sont liés, selon la logique du modèle MVC.
 
 On trouve ainsi le cheminement de pages web suivant :
 
+Côté ELEVE :
 			 --- enter.php --- select_voyage.php --- eleve.php --- validation.php 
 login.php ---|
 			 --- login_bde.php (etc.)
 
-et
-													 -- bde.php
+Côté BDE :
+													 -- bde.php -- validation_bde.php
 login_bde.php -- enter_bde.php -- accueil_bde.php --| 
 													 -- select_voyage.php -- eleve.php
 
@@ -87,6 +101,10 @@ de l'identification, et n'affichent donc rien car la redirection est immédiate.
 Vous pouvez vous identifier avec tous les identifiants de la base de données, comme :
 - mchochod : 1234
 - bauclair : 1234
+- amorel : 1234
+- bcardoso : 1234
+- jeagan : 1234
+- meperrin : 1234
 - elc : 1234
 etc...
 
@@ -99,21 +117,20 @@ Nous avons en effet essayé d'implémenter le plus possible la partie back-end d
 
 Il est donc possible de récupérer toutes les données d'une personne en se connectant,
 mais il n'est pas encore possible d'effectuer des modifications de la base de données :
+
+Ne sont pas implémentés pour l'instant en back-end pour la partie ETUDIANT :
 - ajout d'un nouveau groupe
 - suppression d'un groupe
 - soumission d'une réservation de groupe
 
-ne sont pas implémentés pour l'instant en back-end pour la partie ETUDIANT
-
+Ne sont également pas implémentés pour la partie BDE/ADMIN :
 - création d'un voyage
 - enregistrement du nouveau voyage
-
-ne sont également pas implémentés pour la partie BDE/ADMIN
-
 
 Ces actions sont pour l'instant hardcodées afin de donner un aperçu de l'interface
 que nous avons pensée pour le projet, après définition des besoins utilisateurs, et 
 des actions qui vont être effectuées sur le Telecom Bus Planner.
+
 
 
 ******************************* PROPOS DE L'EQUIPE *****************************
@@ -130,3 +147,5 @@ nombreuses réaction très positives de leur part "Mais c'est génial on le veut
 
 En vous souhaitant bon test et bonne relecture du code (qui a été réindenté
 pour une lecture agréable).
+
+
