@@ -1,23 +1,57 @@
-#######    #    #    ######  	#######    ######  #	#    ###### 
-#	   #   #    #   # 			#	   #   #    #  #	# 	#
-#     #    #    #   # 			#     #    #    #  #	# 	#
-#######    #    #    ##### 	    #######    #    #  ######	 #####
-#      #   #    #         # 	#      #   #    #       # 		  #
-#	    #  #    #         # 	#	    #  #    #       #	  	  #
-#       #  #    #         # 	#       #  #    #       #	  	  #
-########   ######   ###### 		########   ######  		#	######
+     #######    #    #    ######     #######    ######  #    #    #######
+     #      #   #    #   #           #      #   #    #  #    #   #
+     #     #    #    #   #           #     #    #    #  #    #   #
+     #######    #    #    #####      #######    #    #  ######    #####
+     #      #   #    #         #     #      #   #    #       #         #
+     #       #  #    #         #     #       #  #    #       #         #
+     #       #  #    #         #     #       #  #    #       #         #
+     ########   ######   ######      ########   ######       #  #######
 
-Benjamin AUCLAIR
-Bernardo CARDOSO CORDEIRO
-Martin CHOCHOD
-Augustin MOREL
+     - Benjamin Auclair
+     - Bernardo Cardoso Cordeiro
+     - Martin Chochod
+     - Augustin Morel
 
-****** README *******
+************************************ README ************************************
 
 Bienvenue dans le projet des BusBoys : le Telecom Bus Planner.
 Ce Readme est conçu afin de vous aider à comprendre son fonctionnement détaillé.
+Il comporte les sections suivante :
+- base de données
+- structure du projet
+- cheminement lors de la navigation web
 
-*** STRUCTURE ***
+
+****************************** BASE DE DONNEES ********************************
+
+IMPORTANT : afin de lancer le projet, vous devrez tout d'abord importer la base
+de données en créant une base de données nommé projet_igr, puis en cliquant sur 
+importer ( avec par exemple phpMyAdmin).
+Le projet étant écrit en php, vous devez également disposer d'un outil comme LAMP,
+XAMP ou WAMP (pour Windows) afin de l'exécuter.
+
+La base de données prjet_igr est constituée de 5 tables, comme suit :
+
+- une table liste_bde : dans l'idée elle est fournie par le BDE client du service
+(à l'heure actuelle Le BDE Telecom, mais à terme n'importe quel BDE client). Elle
+contient la liste de tous les élèves, leur login et leur mot de passe, leur statut
+(0 : non cotisant, 1 : cotisant BDE, 2 : admin BDE), et les groupes auxquels ils 
+appartiennent
+
+- une table groupes : elle contient tous les groupes créés, ainsi que les 
+identifiants (uniques) vers la table liste_bde de leurs membres.
+NB : l'utilisation des ID et non des noms permet de résoudre les cas des
+homonymes.
+
+-  une table voyages_dispo : elle contient la liste des voyages et leur disponibilité
+à la réservation des places dans le bus.
+
+- une table wei : cette table serait générée automatiquement dès l'ouverture des 
+réservations pour un voyage. 
+
+
+*********************************** STRUCTURE **********************************
+
 Tout d'abord, nous avons implémenté notre projet selon une architecture MVC et 
 avec une base de données SQL (projet_igr.sql, présent dans le dossier).
 Il y a donc 3 dossiers :
@@ -28,16 +62,10 @@ Il y a donc 3 dossiers :
 On retrouve exactement la même liste de fichiers d'un répertoire à un autre, 
 car en effet ceux-ci sont liés, selon la logique du modèle MVC.
 
-*********************************************************************************
-IMPORTANT : afin de lancer le projet, vous devrez tout d'abord importer la base
-de données en créant une base de données nommé projet_igr, puis en cliquant sur 
-importer ( on a pris ici l'exemple de phpMyAdmin).
-Le projet étant écrit en php, vous devez également disposer d'un outil comme LAMP,
-XAMP ou WAMP (pour Windows) afin de l'exécuter.
-**********************************************************************************
 
 
-*** CHEMINEMENT ***
+********************************** CHEMINEMENT **********************************
+
 On trouve ainsi le cheminement de pages web suivant :
 
 			 --- enter.php --- select_voyage.php --- eleve.php --- validation.php 
@@ -53,7 +81,9 @@ login_bde.php -- enter_bde.php -- accueil_bde.php --|
 Les pages enter.php et enter_bde.php ne sont que des formulaires de contrôle 
 de l'identification, et n'affichent donc rien car la redirection est immédiate.
 
-*** UTILISATION ***
+
+************************************ UTILISATION ************************************
+
 Vous pouvez vous identifier avec tous les identifiants de la base de données, comme :
 - mchochod : 1234
 - bauclair : 1234
@@ -85,7 +115,9 @@ Ces actions sont pour l'instant hardcodées afin de donner un aperçu de l'inter
 que nous avons pensée pour le projet, après définition des besoins utilisateurs, et 
 des actions qui vont être effectuées sur le Telecom Bus Planner.
 
-*** NB ***
+
+******************************* PROPOS DE L'EQUIPE *****************************
+
 Nous aimerions souligner le fait que ce sujet nous a particulièrement intéressé, 
 car sa problématique nous a concerné tout particulièrement et nous avons dès lors 
 souhaité trouver une solution durable à ce problème. Dans cette optique, et dans 
